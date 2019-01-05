@@ -1,4 +1,4 @@
-@startuml contextDiagram
+@startuml 1_contextDiagram
 title <u> Diagramme de contexte</u>
 left to right direction
 
@@ -9,7 +9,7 @@ actor personnel_accueil as ACCUEIL
 actor client as CUSTOMER
 actor Banque <<System>> as BANK
 
-rectangle Pizza2000 {
+rectangle OC_Pizza {
     rectangle Commande AS CMD
     rectangle Recette AS RECIPE
     rectangle Ingredient AS ITEM

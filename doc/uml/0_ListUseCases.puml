@@ -1,4 +1,4 @@
-@startuml ListUseCases
+@startuml 0_ListUseCases
 
 title <u>Liste des cas d'utilisation</u>
 
@@ -7,15 +7,17 @@ title <u>Liste des cas d'utilisation</u>
 'Update
 'Delete
 
-skinparam rectangle {
-    backgroundColor White
+skinparam package {
     backgroundColor<<Commandes>> Gold
     backgroundColor<<Pizza_Recette>> Tomato
-    backgroundColor<<ingrédients_stock>> OliveDrab
-
+    backgroundColor<<ingredients_stock>> OliveDrab
 }
+skinparam rectangle{
+    backgroundColor White
+}
+
 ' COMMANDES
-rectangle Commandes <<Commandes>> {
+package Commandes <<Commandes>> {
     left to right direction
     rectangle Create_C {
         (créer une commande) AS CREATE_CMD
@@ -25,20 +27,18 @@ rectangle Commandes <<Commandes>> {
         (lister les commades) AS LIST_CMD
     }
     rectangle Update_C {
-        (modifier une commande) AS MODIFY_CMD
         (modifier l'état d'une commande) AS MODIFY_STATE_CMD
-        (payer une commande) AS PAY_CMD
         (payer en ligne) AS PAY_ONLINE_CMD
         (payer sur place) AS PAY_STORE_CMD
+        (annuler une commande) AS CANCEL_CMD
     }
     rectangle Delete_C {
-        (annuler une commande) AS CANCEL_CMD
     }
 }
 
 ' RECETTE
 
-rectangle Pizza_Recette <<Pizza_Recette>> {
+package Pizza_Recette <<Pizza_Recette>> {
     rectangle Ceate_R {
         (rédiger une recette) AS CREATE_RECIPE
     }
@@ -56,7 +56,7 @@ rectangle Pizza_Recette <<Pizza_Recette>> {
 }
 
 ' INGREDIENTS
-rectangle ingrédients_stock <<ingrédients_stock>> {
+package ingrédients_stock <<ingredients_stock>> {
     rectangle Create_S{
         (créer un ingrédient) AS CREATE_ITEM
     }
@@ -68,7 +68,6 @@ rectangle ingrédients_stock <<ingrédients_stock>> {
         (définir le stock) AS SET_ITEN
     }
     rectangle Delete_S{
-
     }
 }
 
@@ -76,9 +75,7 @@ rectangle ingrédients_stock <<ingrédients_stock>> {
 '     (créer une commande) AS CREATE_CMD
 '     (lister les commades) AS LIST_CMD
 '     (voir l'etat d'une commande) AS SHOW_STATE_CMD
-'     (modifier une commande) AS MODIFY_CMD
 '     (modifier l'état d'une commande) AS MODIFY_STATE_CMD
-'     (payer une commande) AS PAY_CMD
 '     (payer en ligne) AS PAY_ONLINE_CMD
 '     (payer sur place) AS PAY_STORE_CMD
 '     (annuler une commande) AS CANCEL_CMD

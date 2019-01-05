@@ -1,4 +1,4 @@
-@startuml Accueil_UseCaseDiagram
+@startuml 2_Accueil_UseCaseDiagram
 
 title <u>Diagramme d'utilisation personnel d'accueil</u>
 'left to right direction
@@ -31,8 +31,8 @@ ACCUEIL --> CANCEL_CMD
 SHOW_RECIPE ..> LIST_RECIPE
 AVAIL_RECIPE ..> CREATE_CMD
 
-SHOW_STATE_CMD ..> CANCEL_CMD
-PAY_STORE_CMD --> MODIFY_STATE_CMD
+SHOW_STATE_CMD .l.> CANCEL_CMD
+PAY_STORE_CMD -r-> MODIFY_STATE_CMD
 LIST_CMD ..> SHOW_STATE_CMD
 LIST_CMD ..> MODIFY_STATE_CMD
 

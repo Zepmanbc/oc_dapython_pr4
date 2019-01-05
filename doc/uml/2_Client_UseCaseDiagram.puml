@@ -1,4 +1,4 @@
-@startuml Client_UseCaseDiagram
+@startuml 2_Client_UseCaseDiagram
 
 title <u>Diagramme d'utilisation Client</u>
 actor client as CUSTOMER
@@ -7,7 +7,6 @@ actor personnel_accueil as ACCUEIL
 'COMMANDES
     (créer une commande) AS CREATE_CMD
     (voir l'etat d'une commande) AS SHOW_STATE_CMD
-    (payer une commande) AS PAY_CMD
     (payer en ligne) AS PAY_ONLINE_CMD
     (payer sur place) AS PAY_STORE_CMD
     (annuler une commande) AS CANCEL_CMD
@@ -23,7 +22,8 @@ CUSTOMER --> CREATE_CMD
 CUSTOMER <-r- LIST_RECIPE
 CUSTOMER <-l- SHOW_STATE_CMD
 CUSTOMER --> CANCEL_CMD
-CUSTOMER -u-> PAY_CMD
+CUSTOMER -u-> PAY_ONLINE_CMD
+CUSTOMER -u-> PAY_STORE_CMD
 CUSTOMER -d-> ACCUEIL
 
 CREATE_CMD <-- AVAIL_RECIPE
@@ -31,8 +31,5 @@ LIST_RECIPE ..> CREATE_CMD
 LIST_RECIPE <-r- SHOW_RECIPE
 
 SHOW_STATE_CMD ..> CANCEL_CMD
-
-PAY_CMD -u-> PAY_ONLINE_CMD
-PAY_CMD -r-> PAY_STORE_CMD
 
 @enduml
