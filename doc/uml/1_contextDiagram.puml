@@ -1,0 +1,40 @@
+@startuml contextDiagram
+title <u> Diagramme de contexte</u>
+left to right direction
+
+actor Responsable as RESP
+actor Pizzaiolo as PIZLO
+actor gestionnaire_stock as GEST
+actor personnel_accueil as ACCUEIL
+actor client as CUSTOMER
+actor Banque <<System>> as BANK
+
+rectangle Pizza2000 {
+    rectangle Commande AS CMD
+    rectangle Recette AS RECIPE
+    rectangle Ingredient AS ITEM
+}
+
+CMD -- RECIPE
+RECIPE -- ITEM
+
+CUSTOMER --> ACCUEIL
+
+GEST <-u-> ITEM
+
+CUSTOMER <--> CMD
+CUSTOMER <-- RECIPE
+
+ACCUEIL <--> CMD
+ACCUEIL <-- RECIPE
+
+RESP <.. CMD
+RESP <--> RECIPE
+RESP <-l-> ITEM
+
+PIZLO <-u- RECIPE
+PIZLO <--> CMD
+
+BANK <.l.> CMD
+
+@enduml

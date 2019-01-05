@@ -1,0 +1,100 @@
+@startuml ListUseCases
+
+title <u>Liste des cas d'utilisation</u>
+
+'Create
+'Read
+'Update
+'Delete
+
+skinparam rectangle {
+    backgroundColor White
+    backgroundColor<<Commandes>> Gold
+    backgroundColor<<Pizza_Recette>> Tomato
+    backgroundColor<<ingrédients_stock>> OliveDrab
+
+}
+' COMMANDES
+rectangle Commandes <<Commandes>> {
+    left to right direction
+    rectangle Create_C {
+        (créer une commande) AS CREATE_CMD
+    }
+    rectangle Read_C {
+        (voir l'etat d'une commande) AS SHOW_STATE_CMD
+        (lister les commades) AS LIST_CMD
+    }
+    rectangle Update_C {
+        (modifier une commande) AS MODIFY_CMD
+        (modifier l'état d'une commande) AS MODIFY_STATE_CMD
+        (payer une commande) AS PAY_CMD
+        (payer en ligne) AS PAY_ONLINE_CMD
+        (payer sur place) AS PAY_STORE_CMD
+    }
+    rectangle Delete_C {
+        (annuler une commande) AS CANCEL_CMD
+    }
+}
+
+' RECETTE
+
+rectangle Pizza_Recette <<Pizza_Recette>> {
+    rectangle Ceate_R {
+        (rédiger une recette) AS CREATE_RECIPE
+    }
+    rectangle Read_R {
+        (consulter la liste des recettes) AS LIST_RECIPE
+        (consulter une recette) AS SHOW_RECIPE
+        (vérifier la disponibilité d'une pizza) AS AVAIL_RECIPE
+    }
+    rectangle Update_R {
+        (modifier une recette) AS MODIFY_RECIPE
+    }
+    rectangle Delete_R {
+        (supprimer une recette) AS DEL_RECIPE
+    }
+}
+
+' INGREDIENTS
+rectangle ingrédients_stock <<ingrédients_stock>> {
+    rectangle Create_S{
+        (créer un ingrédient) AS CREATE_ITEM
+    }
+    rectangle Read_S {
+        (consulter la liste d'ingrédients) AS LIST_ITEM
+        (consulter le stock d'ingrédient) AS SHOW_ITEM
+    }
+    rectangle Update_S {
+        (définir le stock) AS SET_ITEN
+    }
+    rectangle Delete_S{
+
+    }
+}
+
+' 'COMMANDES
+'     (créer une commande) AS CREATE_CMD
+'     (lister les commades) AS LIST_CMD
+'     (voir l'etat d'une commande) AS SHOW_STATE_CMD
+'     (modifier une commande) AS MODIFY_CMD
+'     (modifier l'état d'une commande) AS MODIFY_STATE_CMD
+'     (payer une commande) AS PAY_CMD
+'     (payer en ligne) AS PAY_ONLINE_CMD
+'     (payer sur place) AS PAY_STORE_CMD
+'     (annuler une commande) AS CANCEL_CMD
+
+' ' RECETTE
+'     (rédiger une recette) AS CREATE_RECIPE
+'     (consulter la liste des recettes) AS LIST_RECIPE
+'     (consulter une recette) AS SHOW_RECIPE
+'     (vérifier la disponibilité d'une pizza) AS AVAIL_RECIPE
+'     (modifier une recette) AS MODIFY_RECIPE
+'     (supprimer une recette) AS DEL_RECIPE
+
+' ' INGREDIENTS
+'     (créer un ingrédient) AS CREATE_ITEM
+'     (consulter la liste d'ingrédients) AS LIST_ITEM
+'     (consulter le stock d'ingrédient) AS SHOW_ITEM
+'     (définir le stock) AS SET_ITEN
+
+@enduml

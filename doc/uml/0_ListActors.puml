@@ -1,0 +1,11 @@
+@startuml ListActors
+title <u>Liste des acteurs</u>
+
+actor Responsable as RESP
+actor Pizzaiolo as PIZLO
+actor gestionnaire_stock as GEST
+actor personnel_accueil as ACCUEIL
+actor client as CUSTOMER
+actor Banque <<System>> as BANK
+
+@enduml

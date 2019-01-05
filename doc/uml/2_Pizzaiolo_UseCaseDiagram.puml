@@ -1,0 +1,20 @@
+@startuml Pizzaiolo_UseCaseDiagram
+
+title <u>Diagramme d'utilisation Pizzaiolo</u>
+
+actor Pizzaiolo as P
+
+(créer une commande)
+(annuler une commande)
+(payer une commande)
+    (payer en ligne)
+    (payer sur place)
+(voir l'etat d'une commande)
+(modifier une commande)
+(consulter une recette)
+(consulter le stock d'ingrédients)
+(consulter la disponibilité d'une pizza)
+(commander du stock)
+    (définir un stock)
+
+@enduml
