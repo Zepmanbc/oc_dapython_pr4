@@ -52,7 +52,20 @@ penser a rajouter :
 * il est possible de consulter pour commander par téléphone
 * il faut aussi penser qu'il y a 5 boutiques et bientot 8 pour savoir où est le stock, les commandes etc...
 
+
+# Diagrammes d'activité
+
+![creation de commande client](img/4_Commande_CREATE_CMD_ActivityDiagram.png)
+
+![creation de commande agent d'accueil](img/4_Commande_CREATE_CMD_2_ActivityDiagram.png)
+
+
 # Solution technique
 * Django: il y a une partie admin qui ira très bien pour gerer les recettes et les ingrédients, les commandes (en même temps si j'avais dit PHP avec Symphony je me serais tiré une balle dans le pied...)
 * Postgresql: parceque c'est classe
 * permettre la creation d'un compte et la connection avec facebook, ca permettra d'avoir + facilent des like et de la pub etc...
+![Solution Technique](img/5_DeployementDiagram.png)
+
+# Structure de la database
+
+![Struture SQL](img/7_RelationalModel.png)

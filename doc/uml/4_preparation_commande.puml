@@ -1,0 +1,20 @@
+@startuml
+title 4_preparation_commande
+
+note: Pizzaiolo
+start
+
+:Consultation de la liste des commandes;
+:Selection d'une commande non traitée;
+:modifier le status de la commande => en cours;
+fork
+    :preparer la pizza;
+fork again
+    :consulter la recette;
+endfork
+:mettre la pizza à disposition;
+:modifier le status pour chaque pizza => à récupérer;
+:quand le status de chaque item de la commande est prete, le status de la commande passe en prete;
+
+stop
+@enduml

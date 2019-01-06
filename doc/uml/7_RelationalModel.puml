@@ -1,0 +1,133 @@
+@startuml 7_RelationalModel
+title Diagramme de Class
+
+class user{
+    PK: id INTEGER NOT NULL
+    --
+    FK: id_function
+    FK: id_store
+    FK: gender
+    --
+    firstname VARCHAR
+    lastname VARCHAR
+    email EMAIL
+    phone VARCAHR
+}
+
+class gender {
+    PK: id INTEGER NOT NULL
+    --
+    name VARCHAR
+}
+
+class function {
+    PK: id INTEGER NOT NULL
+    --
+    designation VARCHAR
+}
+
+class command{
+    PK: id INTEGER
+    --
+    FK: state
+    FK: id_payment_type
+    FK: id_store
+    FK: id_user
+    --
+    datetime DATETIME
+    payment BOOLEAN
+}
+
+class state {
+    PK: id INTEGER NOT NULL
+    Designation VARCHAR
+}
+
+class payment_type {
+    PK: id INTEGER NOT NULL
+    Designation VARCHAR
+}
+
+class order{
+    PK: id INTEGER NOT NULL
+    --
+    FK: command
+    FK: id_recipe
+    FK: id_state
+    --
+    (quantity on command)
+}
+
+class recipe{
+    PK: id INTEGER NOT NULL
+    --
+    name VARCHAR
+    designation_customer VARCHAR
+    designation_cook VARCHAR
+    price DECIMAL
+    time TIME
+}
+
+class ingredient{
+    PK: id INTEGER NOT NULL
+    --
+    FK: allergen
+    --
+    name VARCHAR
+    unit VARCHAR
+    quantity_unit DECIMAL
+    price DECIMAL
+}
+
+class allergen{
+    PK: id INTEGER NOT NULL
+    --
+    name VARCHAR
+}
+
+class store{
+    PK: id INTEGER NOT NULL
+    --
+    name VARCHAR
+    adress VARCHAR
+    description VARCHAT
+}
+
+class ingredient_store {
+    PFK: id_ingredient
+    PFK: id_store
+    quantity DECIMAL
+}
+
+class recipe_ingredient{
+    PFK: id_recipe
+    PFK: id_ingredient
+    --
+    quantity DECIMAL
+}
+
+class allergen_ingredient {
+    PFK: id_ingredient
+    PFK: id_allergen
+}
+
+store "*" - "1" ingredient
+(store, ingredient) .. ingredient_store
+ingredient "0..*" - "0..*" allergen
+(ingredient, allergen) .. allergen_ingredient
+recipe "1" -- "0..*" ingredient
+(recipe, ingredient) . recipe_ingredient
+
+
+order "1" - "1" recipe
+order "1..*" -- "1" command
+user "1" - "0..*" command
+command "0..*" -- "1" store
+user "1" -- "0..1" store
+function "1" -- "1" user
+command "1" - "1" state
+order "1" - "1" state
+user "1" -- "0..1" gender
+payment_type "1" -- "1" command
+
+@enduml

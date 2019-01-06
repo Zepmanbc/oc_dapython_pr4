@@ -1,0 +1,23 @@
+@startuml 4_Ingredient_SHOW_ITEM_ActivityDiagram
+
+title consulter le stock d'un ingrédient
+
+note : Gestionnaire_stock
+
+start
+
+:aller dans la partie de gestion du stock;
+
+if (le gestionnaire reste sur sa boutique par défaut) then (oui)
+else (non)
+    :changer de boutique;
+    :choisir une boutique dans la liste;
+endif
+
+:Demander à voir la liste des ingrédients;
+
+:Selectionner un ingrédient;
+
+stop
+
+@enduml
