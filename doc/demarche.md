@@ -1,4 +1,4 @@
-J'ai commencé par lister les différents acteurs dans l'énoncé puis imaginé des secnarios pour voir si il en existe d'autres
+J'ai commencé par lister les différents acteurs dans l'énoncé puis imaginé des scénarios pour voir si il en existe d'autres
 
 ![0_ListActors](img/0_ListActors.png)
 
