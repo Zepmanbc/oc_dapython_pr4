@@ -12,7 +12,7 @@ start
 
 :creer nouvelle recette;
 
-:remplir les divers champs (désignation, prix, catégories, alergies...);
+:remplir les divers champs (désignation, prix, etc...);
 
 repeat
 if (l'ingredient est dans la liste) then (non)

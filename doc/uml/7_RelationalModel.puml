@@ -5,13 +5,14 @@ class user{
     PK: id INTEGER NOT NULL
     --
     FK: id_function
-    FK: id_store
+    FK: id_store (INDEX)
     FK: gender
     --
     firstname VARCHAR
-    lastname VARCHAR
+    lastname VARCHAR (INDEX)
     email EMAIL
-    phone VARCAHR
+    password PASSWORD
+    phone VARCHAR
 }
 
 class gender {
@@ -31,8 +32,8 @@ class command{
     --
     FK: state
     FK: id_payment_type
-    FK: id_store
-    FK: id_user
+    FK: id_store (INDEX)
+    FK: id_user (INDEX)
     --
     datetime DATETIME
     payment BOOLEAN
@@ -61,11 +62,19 @@ class order{
 class recipe{
     PK: id INTEGER NOT NULL
     --
+    FK: category
+    --
     name VARCHAR
     designation_customer VARCHAR
     designation_cook VARCHAR
     price DECIMAL
     time TIME
+}
+
+class category {
+    PK: id INTEGER NOT NULL
+    --
+    designation VARCHAR
 }
 
 class ingredient{
@@ -129,5 +138,6 @@ command "1" - "1" state
 order "1" - "1" state
 user "1" -- "0..1" gender
 payment_type "1" -- "1" command
+recipe "0..1" - "1" category
 
 @enduml

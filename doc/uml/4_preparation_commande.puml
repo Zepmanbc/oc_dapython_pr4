@@ -6,6 +6,7 @@ start
 
 :Consultation de la liste des commandes;
 :Selection d'une commande non traitée;
+note: prévoir une interface pour écran tactile
 :modifier le status de la commande => en cours;
 fork
     :preparer la pizza;

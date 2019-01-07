@@ -13,6 +13,7 @@ object Commande {
 
 object Recette {
     Désignation
+    Catégorie
     Liste Ingrédients/Quantité
     Prix unitaire
     Temps de préparation moyen

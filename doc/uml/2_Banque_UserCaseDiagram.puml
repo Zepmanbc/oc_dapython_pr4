@@ -1,4 +1,4 @@
-@startuml 2_ Banque_UserCaseDiagram
+@startuml 2_Banque_UserCaseDiagram
 
 title <u>Diagramme d'utilisation Banque</u>
 
@@ -12,7 +12,7 @@ actor Banque <<System>> as BANK
 
 ' INGREDIENTS
 
-PAY_ONLINE_CMD <--> BANK
-PAY_ONLINE_CMD --> MODIFY_STATE_CMD
+PAY_ONLINE_CMD - BANK
+PAY_ONLINE_CMD -- MODIFY_STATE_CMD
 
 @enduml

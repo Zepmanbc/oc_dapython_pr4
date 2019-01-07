@@ -5,7 +5,6 @@ title Créer une commande
 note: client
 
 start
-
 :aller sur le site;
 if (l'utilisateur a un compte) then (non)
     if (l'utilisateur veut céer un compte) then (non)
@@ -21,9 +20,11 @@ if (l'utilisateur a un compte) then (non)
 else (oui)
 endif
 :l'utilisateur se connecte;
+note: donner la possibilité de se connecter avec FB
 if (l'utilisateur a renseigné une boutique préférée) then (oui)
 else (non)
     :l'utilisateur selectionne une boutique;
+    note: demander si c'est la boutique par défaut
 endif
 repeat
 :la liste des pizza disponible s'affiche;

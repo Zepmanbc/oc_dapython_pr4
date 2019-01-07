@@ -7,6 +7,7 @@ note: client
 start
 
 :l'utilisateur a fait une commande avec son compte et n'a pas payé en ligne;
+:l'utilisateur se rend sur son compte avec la liste des commandes;
 if(la commande a commencé à être prise en compte) then (oui)
     end
 else (non)

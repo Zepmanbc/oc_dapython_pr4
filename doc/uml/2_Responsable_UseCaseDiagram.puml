@@ -5,7 +5,7 @@ title <u>Diagramme d'utilisation Responsable</u>
 actor Responsable as RESP
 
 'COMMANDES
-    (lister les commades) AS LIST_CMD
+    (lister les commandes) AS LIST_CMD
 
 ' RECETTE
     (rédiger une recette) AS CREATE_RECIPE
@@ -18,16 +18,17 @@ actor Responsable as RESP
     (créer un ingrédient) AS CREATE_ITEM
     (consulter la liste d'ingrédients) AS LIST_ITEM
 
-RESP <-u- LIST_CMD
+RESP - LIST_CMD
 
-RESP --> CREATE_RECIPE
-RESP <-- LIST_RECIPE
-LIST_RECIPE --> MODIFY_RECIPE
-LIST_RECIPE --> SHOW_RECIPE
-LIST_RECIPE --> DEL_RECIPE
-
-RESP -r-> CREATE_ITEM
-RESP -l-> LIST_ITEM
-LIST_ITEM --> CREATE_RECIPE
+' RESP -- CREATE_RECIPE
+RESP -- LIST_RECIPE
+LIST_RECIPE -- MODIFY_RECIPE
+LIST_RECIPE -- SHOW_RECIPE
+LIST_RECIPE - DEL_RECIPE
+CREATE_RECIPE - LIST_RECIPE
+' RESP -r- CREATE_ITEM
+CREATE_ITEM -- LIST_ITEM
+RESP -l- LIST_ITEM
+LIST_ITEM .. CREATE_RECIPE
 
 @enduml

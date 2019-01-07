@@ -6,11 +6,11 @@ actor personnel_accueil as ACCUEIL
 
 'COMMANDES
     (créer une commande) AS CREATE_CMD
-    (lister les commades) AS LIST_CMD
+    (lister les commandes) AS LIST_CMD
     (voir l'etat d'une commande) AS SHOW_STATE_CMD
     (modifier l'état d'une commande) AS MODIFY_STATE_CMD
     (payer sur place) AS PAY_STORE_CMD
-    (annuler une commande) AS CANCEL_CMD
+    ' (annuler une commande) AS CANCEL_CMD
 
 ' RECETTE
     (consulter la liste des recettes) AS LIST_RECIPE
@@ -19,23 +19,23 @@ actor personnel_accueil as ACCUEIL
 
 ' INGREDIENTS
 
-ACCUEIL <-u- LIST_RECIPE
-ACCUEIL --> CREATE_CMD
+LIST_RECIPE -- ACCUEIL
+' ACCUEIL - CREATE_CMD
 
-ACCUEIL --> MODIFY_STATE_CMD
+' ACCUEIL -- MODIFY_STATE_CMD
 
-ACCUEIL <-- LIST_CMD
-ACCUEIL <-- SHOW_STATE_CMD
-ACCUEIL --> CANCEL_CMD
+ACCUEIL -- LIST_CMD
+' ACCUEIL -l- SHOW_STATE_CMD
+' ACCUEIL -l- CANCEL_CMD
 
-SHOW_RECIPE ..> LIST_RECIPE
-AVAIL_RECIPE ..> CREATE_CMD
+SHOW_RECIPE -- LIST_RECIPE
+AVAIL_RECIPE .. CREATE_CMD
 
-SHOW_STATE_CMD .l.> CANCEL_CMD
-PAY_STORE_CMD -r-> MODIFY_STATE_CMD
-LIST_CMD ..> SHOW_STATE_CMD
-LIST_CMD ..> MODIFY_STATE_CMD
+' SHOW_STATE_CMD .l. CANCEL_CMD
+PAY_STORE_CMD .d.> MODIFY_STATE_CMD
+LIST_CMD -- SHOW_STATE_CMD
+LIST_CMD -- MODIFY_STATE_CMD
 
-LIST_RECIPE ..> CREATE_CMD
+LIST_RECIPE -- CREATE_CMD
 
 @enduml

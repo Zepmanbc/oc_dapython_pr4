@@ -5,7 +5,7 @@ title <u>Diagramme d'utilisation Pizzaiolo</u>
 actor Pizzaiolo as PIZLO
 
 'COMMANDES
-    (lister les commades) AS LIST_CMD
+    (lister les commandes) AS LIST_CMD
     (voir l'etat d'une commande) AS SHOW_STATE_CMD
     (modifier l'état d'une commande) AS MODIFY_STATE_CMD
 
@@ -15,12 +15,11 @@ actor Pizzaiolo as PIZLO
 
 ' INGREDIENTS
 
-PIZLO <-- LIST_CMD
-LIST_CMD <-- SHOW_STATE_CMD
-LIST_CMD --> MODIFY_STATE_CMD
-SHOW_STATE_CMD --> MODIFY_STATE_CMD
+PIZLO -l- LIST_CMD
+LIST_CMD -- SHOW_STATE_CMD
+SHOW_STATE_CMD -- MODIFY_STATE_CMD
 
-PIZLO --> LIST_RECIPE
-LIST_RECIPE --> SHOW_RECIPE
+PIZLO -r- LIST_RECIPE
+LIST_RECIPE -- SHOW_RECIPE
 
 @enduml

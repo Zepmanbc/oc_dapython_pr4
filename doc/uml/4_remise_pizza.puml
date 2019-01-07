@@ -9,7 +9,7 @@ start
 :le client réclame sa commande;
 
 :consulter la liste des commandes;
-
+note: recherche par nom si besoin
 :selectionner la commande;
 
 if (le client à payé en ligne) then (oui)
