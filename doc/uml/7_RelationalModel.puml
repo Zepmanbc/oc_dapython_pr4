@@ -86,6 +86,9 @@ class ingredient{
     unit VARCHAR
     quantity_unit DECIMAL
     price DECIMAL
+    custom BOOLEAN
+    custom_price DECIMAL
+    custom_max INTEGER
 }
 
 class allergen{
@@ -120,12 +123,21 @@ class allergen_ingredient {
     PFK: id_allergen
 }
 
+class order_ingredient {
+    PFK: id_order
+    PFK: id_ingredient
+    --
+    quantity INTEGER
+}
+
 store "*" - "1" ingredient
 (store, ingredient) .. ingredient_store
 ingredient "0..*" - "0..*" allergen
 (ingredient, allergen) .. allergen_ingredient
 recipe "1" -- "0..*" ingredient
 (recipe, ingredient) . recipe_ingredient
+order "0..1" -- "0..*" ingredient
+order_ingredient . (order, ingredient)
 
 
 order "1" - "1" recipe
@@ -134,10 +146,12 @@ user "1" - "0..*" command
 command "0..*" -- "1" store
 user "1" -- "0..1" store
 function "1" -- "1" user
-command "1" - "1" state
-order "1" - "1" state
+state "1" - "1" command
+state "1" -- "1" order
 user "1" -- "0..1" gender
 payment_type "1" -- "1" command
-recipe "0..1" - "1" category
+' recipe "0..1" - "1" category
+category "1" -- "0..1" recipe
+
 
 @enduml

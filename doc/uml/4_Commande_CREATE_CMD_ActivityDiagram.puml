@@ -30,6 +30,7 @@ repeat
 :la liste des pizza disponible s'affiche;
 note : en fonction du stock d'ingrédients
 :l'utilisateur selectionne une pizza;
+:l'utilisateur modifie des ingrédients et écrit un commentaire si besoin;
 repeat while (utilisateur ajoute la pizza dans son panier)
 :l'utilisateur confirme sa commande;
 note: le stock d'ingrédients est bloqué

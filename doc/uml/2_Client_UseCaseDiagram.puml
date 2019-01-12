@@ -6,6 +6,8 @@ actor personnel_accueil as ACCUEIL
 
 'COMMANDES
     (créer une commande) AS CREATE_CMD
+    (modifier la recette) AS CUSTO_CMD
+    (Ecrire un commentaire) AS COMMENT_CMD
     (voir l'etat d'une commande) AS SHOW_STATE_CMD
     (payer en ligne) AS PAY_ONLINE_CMD
     (payer sur place) AS PAY_STORE_CMD
@@ -31,6 +33,8 @@ LIST_RECIPE -r- SHOW_RECIPE
 SHOW_STATE_CMD -- CANCEL_CMD
 
 ACCUEIL - CREATE_CMD
+CREATE_CMD - CUSTO_CMD
+CREATE_CMD -- COMMENT_CMD
 CANCEL_CMD - ACCUEIL
 
 @enduml

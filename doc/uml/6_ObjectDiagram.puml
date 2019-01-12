@@ -8,6 +8,8 @@ object Commande {
     Boutique
     Paiement Type/Etat
     Client (Agent d'accueil)
+    Personalisation
+    Commentaire
     Prix (Prévoir un algo si offres spéciales)
 }
 

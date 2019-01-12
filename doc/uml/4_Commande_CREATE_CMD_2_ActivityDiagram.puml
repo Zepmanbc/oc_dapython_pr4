@@ -15,6 +15,7 @@ repeat
 :la liste des pizza disponible s'affiche;
 note : en fonction du stock d'ingrédients
 :l'agent selectionne une pizza;
+:l'agent modifie des ingrédients et ecrit un commentaire si besoin;
 repeat while (l'agent ajoute la pizza dans le panier)
 :le confirme la commande;
 note: le stock d'ingrédients est bloqué

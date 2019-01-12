@@ -8,10 +8,11 @@ start
 :Selection d'une commande non traitée;
 note: prévoir une interface pour écran tactile
 :modifier le status de la commande => en cours;
+:consulter la personalisation si il y en a une;
 fork
     :preparer la pizza;
 fork again
-    :consulter la recette;
+    :consulter la recette;  
 endfork
 :mettre la pizza à disposition;
 :modifier le status pour chaque pizza => à récupérer;

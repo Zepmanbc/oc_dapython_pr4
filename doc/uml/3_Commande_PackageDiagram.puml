@@ -13,6 +13,8 @@ package Commandes {
     left to right direction
     rectangle Create_C {
         (créer une commande) AS CREATE_CMD
+        (Ecrire un commentaire) AS COMMENT_CMD
+        (modifier la recette) AS CUSTO_CMD
     }
     rectangle Read_C {
         (voir l'etat d'une commande) AS SHOW_STATE_CMD
@@ -37,10 +39,14 @@ RESP --> LIST_CMD
 PIZLO -l-> LIST_CMD
 PIZLO --> MODIFY_STATE_CMD
 ACCUEIL --> CREATE_CMD
+ACCUEIL --> COMMENT_CMD
+ACCUEIL --> CUSTO_CMD
 ACCUEIL --> SHOW_STATE_CMD
 ACCUEIL --> LIST_CMD
 ACCUEIL --> CANCEL_CMD
 CUSTOMER --> CREATE_CMD
+CUSTOMER --> COMMENT_CMD
+CUSTOMER --> CUSTO_CMD
 CUSTOMER --> SHOW_STATE_CMD
 CUSTOMER --> CANCEL_CMD
 CUSTOMER --> PAY_STORE_CMD

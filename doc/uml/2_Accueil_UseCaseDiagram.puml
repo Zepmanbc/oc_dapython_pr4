@@ -6,6 +6,8 @@ actor personnel_accueil as ACCUEIL
 
 'COMMANDES
     (créer une commande) AS CREATE_CMD
+    (modifier la recette) AS CUSTO_CMD
+    (Ecrire un commentaire) AS COMMENT_CMD
     (lister les commandes) AS LIST_CMD
     (voir l'etat d'une commande) AS SHOW_STATE_CMD
     (modifier l'état d'une commande) AS MODIFY_STATE_CMD
@@ -37,5 +39,7 @@ LIST_CMD -- SHOW_STATE_CMD
 LIST_CMD -- MODIFY_STATE_CMD
 
 LIST_RECIPE -- CREATE_CMD
+CREATE_CMD -- CUSTO_CMD
+COMMENT_CMD - CREATE_CMD
 
 @enduml

@@ -39,6 +39,7 @@ j'ai pu faire des regroupements dans les actions et je me suis basé sur "CRUD" 
 
 * [Creation d'une commande (en ligne)](img/4_Commande_CREATE_CMD_ActivityDiagram.png)
 * [Création d'une commande (par l'agent d'accueil)](img/4_Commande_CREATE_CMD_2_ActivityDiagram.png)
+* [Personalisation d'une commande](img/4_commande_custom.png)
 * [Annulation de commande](img/4_Commande_CANCEL_CMD_ActivityDiagram.png)
 * [Préparation de la commande](img/4_preparation_commande.png)
 * [Remise de la pizza](img/4_remise_pizza.png)
@@ -71,3 +72,11 @@ penser a rajouter :
 * il est possible de consulter pour commander par téléphone
 * il faut aussi penser qu'il y a 5 boutiques et bientot 8 pour savoir où est le stock, les commandes etc...
 * **prevoir les demandes pséciales (sans champi, double chorizo, etc...) => ca fait acceder tout le monde à la liste des ingrédrients, prévoir une liste "modifiable"**
+
+rajouter un commentaire lors de la commande
+
+modifier une recette
+
+si on retire un ingrédient c'est le même prix
+
+si on ajoute un ingrédient ca modifie le prix
