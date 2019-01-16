@@ -1,0 +1,28 @@
+@startuml 1_contextDiagram
+title <u> Diagramme de contexte</u>
+' left to right direction
+' top to bottom direction
+
+agent OC_Pizza #000000
+
+actor Responsable as RESP
+actor Pizzaiolo as PIZLO
+
+actor Banque <<System>> as BANK
+
+actor client as CUSTOMER
+actor personnel_accueil as ACCUEIL
+
+actor gestionnaire_stock as GEST
+
+RESP -- OC_Pizza
+GEST -- OC_Pizza
+PIZLO -- OC_Pizza
+
+CUSTOMER - OC_Pizza
+OC_Pizza -- ACCUEIL
+CUSTOMER -- ACCUEIL
+
+OC_Pizza - BANK
+
+@enduml
