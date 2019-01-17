@@ -27,7 +27,7 @@
     2. Client clique sur passer une commande
     3. Systéme demande à Client de se connecter
     4. Client renseigne son identifiant, son mot de passe et valide
-    5. Système affiche la liste des pizza disponible dans la pizzéria par défaut de Client
+    5. Système affiche la liste des pizzas disponible dans la pizzéria par défaut du Client
     6. Client sélectionne une pizza
     7. Client ajoute la pizza dans son panier
     8. Client valide la commande

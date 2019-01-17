@@ -20,20 +20,11 @@ j'ai pu faire des regroupements dans les actions et je me suis basé sur "CRUD" 
 
 ![1_contextDiagram](img/1_contextDiagram.png)
 
-# Diagrammes de cas d'utilisation pour chaque acteur
+# Diagrammes de cas d'utilisation
 
-* [Agent d'accueil](img/2_Accueil_UseCaseDiagram.png)
-* [Responsable](img/2_Responsable_UseCaseDiagram.png)
-* [Pizzaiolo](img/2_Pizzaiolo_UseCaseDiagram.png)
-* [Gestionnaire de stock](img/2_GestionnaireStock_UseCaseDiagram.png)
-* [Client](img/2_Client_UseCaseDiagram.png)
-* [Banque](img/2_Banque_UserCaseDiagram.png)
-
-# Diagrammes de packages
-
-* [Commande](img/3_Commande_PackageDiagram.png)
-* [Ingrédient](img/3_Ingredient_PackageDiagram.png)
-* [Recette](img/3_Recette_PackageDiagram.png)
+* [Commande](img/2_Commande_UseCaseDiagram.png)
+* [Ingrédient](img/2_Ingredient_UseCaseDiagram.png)
+* [Recette](img/2_Recette_UseCaseDiagram.png)
 
 # Diagrammes d'activité
 
