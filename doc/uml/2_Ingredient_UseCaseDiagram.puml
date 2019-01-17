@@ -4,29 +4,22 @@ title <u>Ingredient cas d'utilisation</u>
 
 left to right direction
 
-actor Responsable as RESP
 actor gestionnaire_stock as GEST
 
 ' INGREDIENTS
 package ingrédients_stock {
     rectangle Create_S{
-        (créer un ingrédient) AS CREATE_ITEM
     }
     rectangle Read_S {
-        (consulter la liste d'ingrédients) AS LIST_ITEM
         (consulter le stock d'ingrédient) AS SHOW_ITEM
     }
     rectangle Update_S {
         (définir le stock) AS SET_ITEN
     }
     rectangle Delete_S{
-
     }
 }
 
-RESP --> CREATE_ITEM
-RESP --> LIST_ITEM
-GEST --> LIST_ITEM
 GEST --> SET_ITEN
 GEST --> SHOW_ITEM
 

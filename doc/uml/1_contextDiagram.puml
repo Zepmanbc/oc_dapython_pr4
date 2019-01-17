@@ -6,11 +6,8 @@ title <u> Diagramme de contexte</u>
 rectangle OC_Pizza {
 }
 
-actor Responsable as RESP
 actor Pizzaiolo as PIZLO
-
 actor Banque <<System>> as BANK
-actor livreur as DELIVER
 actor client as CUSTOMER
 actor personnel_accueil as ACCUEIL
 
@@ -19,18 +16,11 @@ actor gestionnaire_stock as GEST
 
 
 GEST - OC_Pizza
-
-RESP -- OC_Pizza
-
 PIZLO -- OC_Pizza
-
 OC_Pizza - BANK
-
-
 OC_Pizza -- CUSTOMER
 OC_Pizza -- ACCUEIL
-CUSTOMER -- DELIVER
-ACCUEIL -- DELIVER
+CUSTOMER - ACCUEIL
 
 
 
