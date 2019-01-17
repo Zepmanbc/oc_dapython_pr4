@@ -3,50 +3,29 @@ title <u> Diagramme de contexte</u>
 ' left to right direction
 ' top to bottom direction
 
-rectangle OC_Pizza {
-    rectangle Commande AS CMD
-    rectangle Recette AS RECIPE
-    rectangle Ingredient AS ITEM
-}
+agent OC_Pizza #000000
 
 actor Responsable as RESP
 actor Pizzaiolo as PIZLO
-
+actor livreur as DELIVER
 actor Banque <<System>> as BANK
 
 actor client as CUSTOMER
 actor personnel_accueil as ACCUEIL
 
-
 actor gestionnaire_stock as GEST
 
-
-GEST -r- ITEM
-
-CMD - RECIPE
-RECIPE - ITEM
-
-RESP -- RECIPE
-RESP -- ITEM
-RESP -- CMD
-
-PIZLO -- RECIPE
-PIZLO -- CMD
+RESP -- OC_Pizza
+GEST -u- OC_Pizza
+PIZLO -- OC_Pizza
 
 
-CMD - BANK
+DELIVER - CUSTOMER
+DELIVER - ACCUEIL
+CUSTOMER - OC_Pizza
+OC_Pizza -- ACCUEIL
+CUSTOMER -- ACCUEIL
 
-
-CMD -- CUSTOMER
-CMD -- ACCUEIL
-RECIPE -- CUSTOMER
-RECIPE -- ACCUEIL
-CUSTOMER - ACCUEIL
-ITEM -- CUSTOMER
-ITEM -- ACCUEIL
-
-
-
-
+OC_Pizza - BANK
 
 @enduml

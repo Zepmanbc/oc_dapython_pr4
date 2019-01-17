@@ -20,7 +20,16 @@ j'ai pu faire des regroupements dans les actions et je me suis basé sur "CRUD" 
 
 ![1_contextDiagram](img/1_contextDiagram.png)
 
-# Diagrammes de cas d'utilisation
+# Diagrammes de cas d'utilisation pour chaque acteur
+
+* [Agent d'accueil](img/2_Accueil_UseCaseDiagram.png)
+* [Responsable](img/2_Responsable_UseCaseDiagram.png)
+* [Pizzaiolo](img/2_Pizzaiolo_UseCaseDiagram.png)
+* [Gestionnaire de stock](img/2_GestionnaireStock_UseCaseDiagram.png)
+* [Client](img/2_Client_UseCaseDiagram.png)
+* [Banque](img/2_Banque_UserCaseDiagram.png)
+
+# Diagrammes de packages
 
 * [Commande](img/3_Commande_PackageDiagram.png)
 * [Ingrédient](img/3_Ingredient_PackageDiagram.png)
@@ -41,9 +50,9 @@ j'ai pu faire des regroupements dans les actions et je me suis basé sur "CRUD" 
 
 # Solution technique
 
-* Django: il y a une partie admin qui ira très bien pour gerer les recettes et les ingrédients, les commandes.
-* Postgresql: la quantité de commandes peut très rapidement devenir importante avec 5 puis 8 boutiques, il faut un système robuste. 
-* Permettre la creation d'un compte et la connection avec facebook, ca permettra d'avoir + facilement des likes et de la pub etc...
+* Django: il y a une partie admin qui ira très bien pour gerer les recettes et les ingrédients, les commandes (en même temps si j'avais dit PHP avec Symphony je me serais tiré une balle dans le pied...)
+* Postgresql: parceque c'est classe
+* permettre la creation d'un compte et la connection avec facebook, ca permettra d'avoir + facilement des likes et de la pub etc...
 
 ![Solution Technique](img/5_DeployementDiagram.png)
 
@@ -62,7 +71,7 @@ penser a rajouter :
 * il y a différents comptes utilisateur en fonction du profil avec différents accès
 * il est possible de consulter pour commander par téléphone
 * il faut aussi penser qu'il y a 5 boutiques et bientot 8 pour savoir où est le stock, les commandes etc...
-* prevoir les demandes pséciales (sans champi, double chorizo, etc...) => ca fait acceder tout le monde à la liste des ingrédrients, prévoir une liste "modifiable"
+* **prevoir les demandes pséciales (sans champi, double chorizo, etc...) => ca fait acceder tout le monde à la liste des ingrédrients, prévoir une liste "modifiable"**
 
 rajouter un commentaire lors de la commande
 

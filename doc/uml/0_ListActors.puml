@@ -6,6 +6,7 @@ rectangle Interne {
     actor Pizzaiolo as PIZLO
     actor gestionnaire_stock as GEST
     actor personnel_accueil as ACCUEIL
+    actor livreur as DELIVER
 }
 
 rectangle Service_externe {

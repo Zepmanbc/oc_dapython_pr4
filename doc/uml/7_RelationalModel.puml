@@ -10,9 +10,11 @@ class user{
     --
     firstname VARCHAR
     lastname VARCHAR (INDEX)
+    adress: VARCHAR
     email EMAIL
     password PASSWORD
     phone VARCHAR
+    comment VARCHAR
 }
 
 class gender {
