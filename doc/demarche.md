@@ -14,19 +14,21 @@ j'ai pu faire des regroupements dans les actions et je me suis basé sur "CRUD" 
 * Recette
 * Ingrédient
 
-# [Liste des cas d'utilisation](img/0_ListUseCases.png)
-
 # Diagramme de contexte
 
 ![1_contextDiagram](img/1_contextDiagram.png)
 
 # Diagrammes de cas d'utilisation
 
-* [Commande](img/2_Commande_UseCaseDiagram.png)
-* [Ingrédient](img/2_Ingredient_UseCaseDiagram.png)
-* [Recette](img/2_Recette_UseCaseDiagram.png)
+![Commande](img/2_Commande_UseCaseDiagram.png)
+
+![Ingrédient](img/2_Ingredient_UseCaseDiagram.png)
+
+![Recette](img/2_Recette_UseCaseDiagram.png)
 
 # Diagrammes d'activité
+
+**voir quels diagrames garder (ou pas) et rajouter des fiches**
 
 * [Creation d'une commande (en ligne)](img/4_Commande_CREATE_CMD_ActivityDiagram.png)
 * [Création d'une commande (par l'agent d'accueil)](img/4_Commande_CREATE_CMD_2_ActivityDiagram.png)
@@ -41,33 +43,10 @@ j'ai pu faire des regroupements dans les actions et je me suis basé sur "CRUD" 
 
 # Solution technique
 
-* Django: il y a une partie admin qui ira très bien pour gerer les recettes et les ingrédients, les commandes (en même temps si j'avais dit PHP avec Symphony je me serais tiré une balle dans le pied...)
-* Postgresql: parceque c'est classe
-* permettre la creation d'un compte et la connection avec facebook, ca permettra d'avoir + facilement des likes et de la pub etc...
+* Amazon Web Service : Service qui s'adapte au trafique et permet de s'affranchir des problèmes matériel, la garantie de toujours avoir le service en ligne.
+* Django : La partie Admin intégrée à Django va permettre d'avoir une gestion des commandes efficace et permet une modularité de l'application afin de prévoir de futures évolutions.
+* Nginx/Gunicorn/Postgres : Une combinaison robuste qui permettra à l'application de supporter la croissance de la société.
+* HTML5/CSS3/JQuery/Bootstrap : Des technologies WEB qui permettent d'avoir une application répondant aux standards graphique actuels et de s'adapter à l'utilisation mobile.
+* Facebook authentification: Permettre au client de se connecter grace à son compte facebook afin de simplifier l'identification et de se laisser la possibilité d'utiliser les réseaux sociaux pour faire de la publicité.
 
 ![Solution Technique](img/5_DeployementDiagram.png)
-
-# Structure de la database
-
-![Struture SQL](img/7_RelationalModel.png)
-
-penser a rajouter :
-* la notion de prix de pizza, 
-* de prix d'ingrédients, 
-* de temps de préparation pour prévoir un temps d'attente, 
-* définir le prix de revient de chaque pizza avec la somme d'ingrédients
-* on ne peux pas modifier une commande (la liste des pizza) car si ca a été payé c'est le bordel, une commande payé c'est une commande livré. il est possible d'annuler une commande uniquement dans le cas d'une commande a distance non payé.
-* quand une commande est lancé le stock d'ingrédients diminu en fonction de la recette
-* les différents moyens de paiement en ligne ou en live
-* il y a différents comptes utilisateur en fonction du profil avec différents accès
-* il est possible de consulter pour commander par téléphone
-* il faut aussi penser qu'il y a 5 boutiques et bientot 8 pour savoir où est le stock, les commandes etc...
-* **prevoir les demandes pséciales (sans champi, double chorizo, etc...) => ca fait acceder tout le monde à la liste des ingrédrients, prévoir une liste "modifiable"**
-
-rajouter un commentaire lors de la commande
-
-modifier une recette
-
-si on retire un ingrédient c'est le même prix
-
-si on ajoute un ingrédient ca modifie le prix
