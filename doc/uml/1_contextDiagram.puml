@@ -4,16 +4,13 @@ title <u> Diagramme de contexte</u>
 ' top to bottom direction
 
 rectangle OC_Pizza {
-    rectangle Commande AS CMD
-    rectangle Recette AS RECIPE
-    rectangle Ingredient AS ITEM
 }
 
 actor Responsable as RESP
 actor Pizzaiolo as PIZLO
 
 actor Banque <<System>> as BANK
-
+actor livreur as DELIVER
 actor client as CUSTOMER
 actor personnel_accueil as ACCUEIL
 
@@ -21,29 +18,20 @@ actor personnel_accueil as ACCUEIL
 actor gestionnaire_stock as GEST
 
 
-GEST -r- ITEM
+GEST - OC_Pizza
 
-CMD - RECIPE
-RECIPE - ITEM
+RESP -- OC_Pizza
 
-RESP -- RECIPE
-RESP -- ITEM
-RESP -- CMD
+PIZLO -- OC_Pizza
 
-PIZLO -- RECIPE
-PIZLO -- CMD
+OC_Pizza - BANK
 
 
-CMD - BANK
+OC_Pizza -- CUSTOMER
+OC_Pizza -- ACCUEIL
+CUSTOMER -- DELIVER
+ACCUEIL -- DELIVER
 
-
-CMD -- CUSTOMER
-CMD -- ACCUEIL
-RECIPE -- CUSTOMER
-RECIPE -- ACCUEIL
-CUSTOMER - ACCUEIL
-ITEM -- CUSTOMER
-ITEM -- ACCUEIL
 
 
 

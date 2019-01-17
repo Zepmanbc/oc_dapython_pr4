@@ -1,6 +1,6 @@
-@startuml 3_Recette_PackageDiagram
+@startuml 2_Recette_UseCaseDiagram
 
-title <u>Recette PackageDiagram</u>
+title <u>Recette cas d'utilisation</u>
 
 left to right direction
 

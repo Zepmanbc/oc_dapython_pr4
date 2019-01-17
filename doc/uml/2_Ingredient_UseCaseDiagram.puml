@@ -1,6 +1,6 @@
-@startuml 3_Ingredient_PackageDiagram
+@startuml 2_Ingredient_UseCaseDiagram
 
-title <u>Ingredient PackageDiagram</u>
+title <u>Ingredient cas d'utilisation</u>
 
 left to right direction
 

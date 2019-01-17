@@ -1,0 +1,53 @@
+@startuml 1_contextDiagram
+title <u> Diagramme de contexte</u>
+' left to right direction
+' top to bottom direction
+
+rectangle OC_Pizza {
+    rectangle Commande AS CMD
+    rectangle Recette AS RECIPE
+    rectangle Ingredient AS ITEM
+    
+}
+
+actor Responsable as RESP
+actor Pizzaiolo as PIZLO
+
+actor Banque <<System>> as BANK
+
+actor client as CUSTOMER
+actor personnel_accueil as ACCUEIL
+
+
+actor gestionnaire_stock as GEST
+
+
+GEST -r- ITEM
+
+CMD - RECIPE
+RECIPE - ITEM
+
+RESP -- RECIPE
+RESP -- ITEM
+RESP -- CMD
+
+PIZLO -- RECIPE
+PIZLO -- CMD
+
+
+CMD - BANK
+
+
+CMD -- CUSTOMER
+CMD -- ACCUEIL
+RECIPE -- CUSTOMER
+RECIPE -- ACCUEIL
+CUSTOMER - ACCUEIL
+ITEM -- CUSTOMER
+ITEM -- ACCUEIL
+
+
+
+
+
+@enduml
