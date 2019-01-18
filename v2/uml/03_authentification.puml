@@ -1,4 +1,4 @@
-@startuml 04_authentification
+@startuml 03_authentification
 title Diagramme de cas d'utilisation *Authentification*
 
 package Authentification{
@@ -10,6 +10,9 @@ package Authentification{
 }
 
 LOGIN <-- CREATE_LOGIN : <<extend>>
+LOGIN <-- SELECT_STORE : <<extend>>
+LOGIN <-- SELECT_CUSTOMER : <<extend>>
+LOGIN <-- SET_DELIVER_ADRESS : <<extend>>
 
 @enduml
 

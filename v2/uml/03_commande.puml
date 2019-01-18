@@ -1,4 +1,4 @@
-@startuml 02_commande
+@startuml 03_commande
 title Diagramme de package *Commande*
 
 actor Gestionnaire_de_commande as GESTCMD
