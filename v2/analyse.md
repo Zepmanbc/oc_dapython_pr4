@@ -60,7 +60,7 @@ Un 3ème package ressort:
 
 ## 4 - Fiche Descriptives
 
-Fiche P01: "Consulter une recette"
+[Fiche P01: "Consulter une recette"](p01.md)
 
 Fiche C01: "Créer une commande"
 
