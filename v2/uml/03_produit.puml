@@ -1,0 +1,23 @@
+@startuml 03_produit
+title Diagramme de cas d'utilisation *Produit*
+
+actor Gestionnaire_de_stock as GESTSTOCK
+actor Pizzaiolo as PZLO
+
+package Produit{
+    left to right direction
+    (Consulter une recette) as SHOW_RECIPE
+    (Suivre l'état du stock) as FOLLOW_STOCK
+    (Selectionner une recettes) as SELECT_RECIPE
+    (Lister les recettes) as LIST_RECIPE
+    (Mettre à jour le stock) as UPDATE_STOCK
+}
+
+GESTSTOCK -- FOLLOW_STOCK
+GESTSTOCK -- UPDATE_STOCK
+PZLO -- SHOW_RECIPE
+SHOW_RECIPE <-- SELECT_RECIPE : <<include>>
+LIST_RECIPE -> SELECT_RECIPE : <<include>>
+
+
+@enduml
