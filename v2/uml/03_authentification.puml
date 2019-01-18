@@ -1,11 +1,16 @@
 @startuml 04_authentification
 title Diagramme de cas d'utilisation *Authentification*
-    package Authentification{
-        (S'identifier) as LOGIN
-        (Créer un compte) as CREATE_LOGIN
-        (Selectionner un client) as SELECT_CUSTOMER
-        (Selectionner une boutique) as SELECT_STORE
-        (Renseigner une adresse de livraison) as SET_DELIVER_ADRESS
-    }
+
+package Authentification{
+    (S'identifier) as LOGIN
+    (Créer un compte) as CREATE_LOGIN
+    (Selectionner un client) as SELECT_CUSTOMER
+    (Selectionner une boutique) as SELECT_STORE
+    (Renseigner une adresse de livraison) as SET_DELIVER_ADRESS
+}
+
+LOGIN <-- CREATE_LOGIN : <<extend>>
+
 @enduml
+
 

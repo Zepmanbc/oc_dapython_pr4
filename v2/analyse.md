@@ -47,6 +47,7 @@ On distingue 2 grandes familles:
 
 Un 3ème package ressort:
 * l'authentification: va servir à connaitre le role de chaque utilisateur et également la boutique avec laquelle il intéragit
+
 ![Diagramme de packages](img/02_packages.png)
 
 ## 3 - Les cas d'utilisation
