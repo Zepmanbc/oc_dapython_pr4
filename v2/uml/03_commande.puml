@@ -4,34 +4,60 @@ title Diagramme de package *Commande*
 actor Gestionnaire_de_commande as GESTCMD
 actor Client as CUSTOMER
 actor Banque <<include>> as BANK
+actor Pizzaiolo as PZLO
 
 package Commandes{
-    left to right direction
+    ' left to right direction
     (Créer une commande) as CREATE_CMD
-    (Modifier une commande) as MODIFY_CMD
-    (Livrer une commande) as DELIVER_CMD
-    (Préparer une commande) as PREPAIR_CMD
-    (Payer en ligne) as PAY_ONLINE_CMD
+    ' (Modifier une commande) as MODIFY_CMD
+    usecase MODIFY_CMD as "Modifier une commande
+    --
+    Status:
+        En attente
+        En cours
+        Préparée
+        Payée
+        Livrée
+        Annulée
+    "
+    (valider une commande) AS CONFIRM_CMD
+    (remplir le panier) AS ADD_BASKET
+    (lister les commandes) as LIST_CMD
     (Payer une commande) as PAY_CMD
-    (Payer sur place) as PAY_CASH_CMD
-    (Annuler une commande) as CANCEL_CMD
-    (Vérifier l'état de la commande) as VERIFY_CMD
-    (Sélectionner le mode de livraison) as SELECT_DELIVER
+    ' (Sélectionner le mode de livraison) as SELECT_DELIVER
+    usecase SELECT_DELIVER as "Sélectionner le mode de livraison
+    --
+    Livraison à domicile
+    retrait en boutique"
+    
 }
+package Authentification
+package Produit
 
-CUSTOMER <|- GESTCMD
+' CUSTOMER <|-- GESTCMD
 
-CUSTOMER -- CREATE_CMD
-CREATE_CMD -- PAY_CMD
-PAY_CMD -- PAY_ONLINE_CMD
-PAY_CMD -- PAY_CASH_CMD
-PAY_ONLINE_CMD -- BANK
-CREATE_CMD <- SELECT_DELIVER : <<include>>
+CUSTOMER - ADD_BASKET
+CUSTOMER <|-- GESTCMD
 
-CUSTOMER -- MODIFY_CMD
-MODIFY_CMD -> VERIFY_CMD : <<include>>
-MODIFY_CMD <-- CANCEL_CMD : <<extend>>
-MODIFY_CMD <-- DELIVER_CMD : <<extend>>
-MODIFY_CMD <-- PREPAIR_CMD : <<extend>>
+GESTCMD - CREATE_CMD
+ADD_BASKET <-- CREATE_CMD : <<extend>>
+
+ADD_BASKET <- SELECT_DELIVER : <<include>>
+SELECT_DELIVER -- CONFIRM_CMD
+CONFIRM_CMD - PAY_CMD
+
+' PAY_CMD - PAY_CASH_CMD
+' PAY_CMD - PAY_ONLINE_CMD
+
+PAY_CMD <- BANK : <<extend>>
+
+CUSTOMER - MODIFY_CMD
+GESTCMD - MODIFY_CMD
+MODIFY_CMD -- PZLO
+CONFIRM_CMD -- MODIFY_CMD
+MODIFY_CMD <- LIST_CMD : <<include>>
+
+Authentification . CREATE_CMD
+Produit .. ADD_BASKET
 
 @enduml

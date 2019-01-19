@@ -60,15 +60,29 @@ Un 3ème package ressort:
 
 ## 4 - Fiche Descriptives
 
-[Fiche P01: "Consulter une recette"](p01.md)
+## Package Produit
+* P01 : Suivre l'état du stock
+* P02 : Lister les recettes
+* P03 : Mettre à jour le stock
+* P04 : Lister le stock
+* P05 : Sélectionner une recette
+* P06 : Consulter une recette
 
-Fiche C01: "Créer une commande"
+## Commandes
+* C01 : Remplir le Panier
+* C02 : Sélectionner le mode de livraison
+* C03 : Créer une commande
+* C04 : Valider une commande
+* C05 : Modifier une commande
+* C06 : Lister les commandes
+* C07 : Payer une commande
 
-Diagramme d'activité: Créer un commande
-
-Fiche C02: "Annuler une commande"
-
-Fiche A01: "Renseigner une adresse de livraison"
+## Authentification
+* A01 : S'identifier
+* A02 : Créer un compte
+* A03 : Sélectionner un Client
+* A04 : Sélectionner une boutique
+* A05 : Renseigner une adresse de livraison
 
 ## 5 - Solution technique
 
