@@ -10,21 +10,21 @@ actor Banque <<include>> as BANK
 
 rectangle OC_Pizza{
     left to right direction
-    package Commandes
+    package Commande
     package Produit
     package Authentification
 }
 
-Authentification -- Commandes
+Authentification -- Commande
 Produit -- Authentification
-Commandes - Produit
+Commande - Produit
 
-CUSTOMER -- Commandes
-GESTCMD -- Commandes
+CUSTOMER -- Commande
+GESTCMD -- Commande
 PZLO -- Produit
-PZLO -- Commandes
+PZLO -- Commande
 GESTSTOCK -- Produit
-Commandes -- BANK
+Commande -- BANK
 
 
 @enduml
