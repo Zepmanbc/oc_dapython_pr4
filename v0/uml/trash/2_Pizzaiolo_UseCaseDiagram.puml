@@ -1,0 +1,25 @@
+@startuml 2_Pizzaiolo_UseCaseDiagram
+
+title <u>Diagramme d'utilisation Pizzaiolo</u>
+
+actor Pizzaiolo as PIZLO
+
+'COMMANDES
+    (lister les commandes) AS LIST_CMD
+    (voir l'etat d'une commande) AS SHOW_STATE_CMD
+    (modifier l'état d'une commande) AS MODIFY_STATE_CMD
+
+' RECETTE
+    (consulter la liste des recettes) AS LIST_RECIPE
+    (consulter une recette) AS SHOW_RECIPE
+
+' INGREDIENTS
+
+PIZLO -l- LIST_CMD
+LIST_CMD -- SHOW_STATE_CMD
+SHOW_STATE_CMD -- MODIFY_STATE_CMD
+
+PIZLO -r- LIST_RECIPE
+LIST_RECIPE -- SHOW_RECIPE
+
+@enduml

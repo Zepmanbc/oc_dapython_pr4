@@ -1,0 +1,45 @@
+@startuml 2_Accueil_UseCaseDiagram
+
+title <u>Diagramme d'utilisation personnel d'accueil</u>
+'left to right direction
+actor personnel_accueil as ACCUEIL
+
+'COMMANDES
+    (créer une commande) AS CREATE_CMD
+    (modifier la recette) AS CUSTO_CMD
+    (Ecrire un commentaire) AS COMMENT_CMD
+    (lister les commandes) AS LIST_CMD
+    (voir l'etat d'une commande) AS SHOW_STATE_CMD
+    (modifier l'état d'une commande) AS MODIFY_STATE_CMD
+    (payer sur place) AS PAY_STORE_CMD
+    ' (annuler une commande) AS CANCEL_CMD
+
+' RECETTE
+    (consulter la liste des recettes) AS LIST_RECIPE
+    (consulter une recette) AS SHOW_RECIPE
+    (vérifier la disponibilité d'une pizza) AS AVAIL_RECIPE
+
+' INGREDIENTS
+
+LIST_RECIPE -- ACCUEIL
+' ACCUEIL - CREATE_CMD
+
+' ACCUEIL -- MODIFY_STATE_CMD
+
+ACCUEIL -- LIST_CMD
+' ACCUEIL -l- SHOW_STATE_CMD
+' ACCUEIL -l- CANCEL_CMD
+
+SHOW_RECIPE -- LIST_RECIPE
+AVAIL_RECIPE .. CREATE_CMD
+
+' SHOW_STATE_CMD .l. CANCEL_CMD
+PAY_STORE_CMD .d.> MODIFY_STATE_CMD
+LIST_CMD -- SHOW_STATE_CMD
+LIST_CMD -- MODIFY_STATE_CMD
+
+LIST_RECIPE -- CREATE_CMD
+CREATE_CMD -- CUSTO_CMD
+COMMENT_CMD - CREATE_CMD
+
+@enduml

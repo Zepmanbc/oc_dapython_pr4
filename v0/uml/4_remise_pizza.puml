@@ -1,0 +1,27 @@
+@startuml
+
+title 4_remise_pizza
+
+note: agent d'accueil
+
+start
+
+:le client réclame sa commande;
+
+:consulter la liste des commandes;
+note: recherche par nom si besoin
+:selectionner la commande;
+
+if (le client à payé en ligne) then (oui)
+
+else (non)
+    :demander le réglement au client;
+    :le client paie cash/cheque/CB/chameaux;
+    :modifier le status de paiement de la commande;
+endif
+:vérifier que la comaande est prête;
+:donner la commande au client avec de la sauce piquante;
+:modifier le status de la commande => Terminé;
+stop
+
+@enduml

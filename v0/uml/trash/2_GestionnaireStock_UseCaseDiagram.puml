@@ -1,0 +1,20 @@
+@startuml 2_GestionnaireStock_UseCaseDiagram
+
+title <u>Diagramme d'utilisation GestionnaireStock</u>
+
+actor gestionnaire_stock as GEST
+
+'COMMANDES
+
+' RECETTE
+
+' INGREDIENTS
+    (consulter la liste d'ingrédients) AS LIST_ITEM
+    (consulter le stock d'ingrédient) AS SHOW_ITEM
+    (définir le stock) AS SET_ITEN
+
+GEST -- LIST_ITEM
+LIST_ITEM -- SHOW_ITEM
+SHOW_ITEM -- SET_ITEN
+
+@enduml

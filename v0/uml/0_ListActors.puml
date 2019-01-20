@@ -1,0 +1,20 @@
+@startuml 0_ListActors
+title <u>Liste des acteurs</u>
+
+rectangle Interne {
+    actor Responsable as RESP
+    actor Pizzaiolo as PIZLO
+    actor gestionnaire_stock as GEST
+    actor personnel_accueil as ACCUEIL
+    actor livreur as DELIVER
+}
+
+rectangle Service_externe {
+    actor Banque <<System>> as BANK
+}
+
+rectangle Externe {
+    actor client as CUSTOMER
+}
+
+@enduml

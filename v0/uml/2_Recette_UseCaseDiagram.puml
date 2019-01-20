@@ -1,0 +1,42 @@
+@startuml 2_Recette_UseCaseDiagram
+
+title <u>Recette cas d'utilisation</u>
+
+left to right direction
+
+actor Responsable as RESP
+actor Pizzaiolo as PIZLO
+actor personnel_accueil as ACCUEIL
+actor client as CUSTOMER
+
+' RECETTE
+package Pizza_Recette {
+    rectangle Ceate_R {
+        (rédiger une recette) AS CREATE_RECIPE
+    }
+    rectangle Read_R {
+        (consulter la liste des recettes) AS LIST_RECIPE
+        (consulter une recette) AS SHOW_RECIPE
+        (vérifier la disponibilité d'une pizza) AS AVAIL_RECIPE
+    }
+    rectangle Update_R {
+        (modifier une recette) AS MODIFY_RECIPE
+    }
+    rectangle Delete_R {
+        (supprimer une recette) AS DEL_RECIPE
+    }
+}
+
+RESP -u-> CREATE_RECIPE
+RESP -u-> SHOW_RECIPE
+RESP -u-> LIST_RECIPE
+RESP -u-> MODIFY_RECIPE
+RESP --> DEL_RECIPE
+PIZLO --> LIST_RECIPE
+ACCUEIL --> LIST_RECIPE
+ACCUEIL --> AVAIL_RECIPE
+CUSTOMER --> LIST_RECIPE
+CUSTOMER --> AVAIL_RECIPE
+PIZLO --> SHOW_RECIPE
+
+@enduml

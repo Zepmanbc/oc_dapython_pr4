@@ -1,0 +1,43 @@
+@startuml 6_ObjectDiagram
+title Diagramme d'Objets
+
+object Commande {
+    Date
+    Etat
+    Liste Pizza/Quantité
+    Boutique
+    Paiement Type/Etat
+    Client (Agent d'accueil)
+    Personalisation
+    Commentaire
+    Prix (Prévoir un algo si offres spéciales)
+}
+
+object Recette {
+    Désignation
+    Catégorie
+    Liste Ingrédients/Quantité
+    Prix unitaire
+    Temps de préparation moyen
+    Description pour pizzaiolo
+    Description pour client
+}
+
+object Ingredient {
+    Désignation
+    Unité
+    Prix pour unité
+    Alergène
+    Quantité par boutique
+}
+
+object Client {
+    nom/prenom
+    mail (utilisé pour la connection)
+    mot de passe
+    numéro de telephone
+    liste des commandes
+}
+
+
+@enduml

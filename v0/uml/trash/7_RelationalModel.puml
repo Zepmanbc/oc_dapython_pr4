@@ -1,0 +1,157 @@
+@startuml 7_RelationalModel
+title Diagramme de Class
+
+class user{
+    PK: id INTEGER NOT NULL
+    --
+    FK: id_function
+    FK: id_store (INDEX)
+    FK: gender
+    --
+    firstname VARCHAR
+    lastname VARCHAR (INDEX)
+    email EMAIL
+    password PASSWORD
+    phone VARCHAR
+}
+
+class gender {
+    PK: id INTEGER NOT NULL
+    --
+    name VARCHAR
+}
+
+class function {
+    PK: id INTEGER NOT NULL
+    --
+    designation VARCHAR
+}
+
+class command{
+    PK: id INTEGER
+    --
+    FK: state
+    FK: id_payment_type
+    FK: id_store (INDEX)
+    FK: id_user (INDEX)
+    --
+    datetime DATETIME
+    payment BOOLEAN
+}
+
+class state {
+    PK: id INTEGER NOT NULL
+    Designation VARCHAR
+}
+
+class payment_type {
+    PK: id INTEGER NOT NULL
+    Designation VARCHAR
+}
+
+class order{
+    PK: id INTEGER NOT NULL
+    --
+    FK: command
+    FK: id_recipe
+    FK: id_state
+    --
+    (quantity on command)
+}
+
+class recipe{
+    PK: id INTEGER NOT NULL
+    --
+    FK: category
+    --
+    name VARCHAR
+    designation_customer VARCHAR
+    designation_cook VARCHAR
+    price DECIMAL
+    time TIME
+}
+
+class category {
+    PK: id INTEGER NOT NULL
+    --
+    designation VARCHAR
+}
+
+class ingredient{
+    PK: id INTEGER NOT NULL
+    --
+    FK: allergen
+    --
+    name VARCHAR
+    unit VARCHAR
+    quantity_unit DECIMAL
+    price DECIMAL
+    custom BOOLEAN
+    custom_price DECIMAL
+    custom_max INTEGER
+}
+
+class allergen{
+    PK: id INTEGER NOT NULL
+    --
+    name VARCHAR
+}
+
+class store{
+    PK: id INTEGER NOT NULL
+    --
+    name VARCHAR
+    adress VARCHAR
+    description VARCHAT
+}
+
+class ingredient_store {
+    PFK: id_ingredient
+    PFK: id_store
+    quantity DECIMAL
+}
+
+class recipe_ingredient{
+    PFK: id_recipe
+    PFK: id_ingredient
+    --
+    quantity DECIMAL
+}
+
+class allergen_ingredient {
+    PFK: id_ingredient
+    PFK: id_allergen
+}
+
+class order_ingredient {
+    PFK: id_order
+    PFK: id_ingredient
+    --
+    quantity INTEGER
+}
+
+store "*" - "1" ingredient
+(store, ingredient) .. ingredient_store
+ingredient "0..*" - "0..*" allergen
+(ingredient, allergen) .. allergen_ingredient
+recipe "1" -- "0..*" ingredient
+(recipe, ingredient) . recipe_ingredient
+order "0..1" -- "0..*" ingredient
+order_ingredient . (order, ingredient)
+
+
+order "1" - "1" recipe
+order "1..*" -- "1" command
+user "1" - "0..*" command
+command "0..*" -- "1" store
+user "1" -- "0..1" store
+function "1" -- "1" user
+state "1" - "1" command
+state "1" -- "1" order
+user "1" -- "0..1" gender
+payment_type "1" -- "1" command
+' recipe "0..1" - "1" category
+category "1" -- "0..1" recipe
+
+
+@enduml

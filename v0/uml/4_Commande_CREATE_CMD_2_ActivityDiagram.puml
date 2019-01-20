@@ -1,0 +1,30 @@
+@startuml 4_Commande_CREATE_CMD_2_ActivityDiagram
+
+title Créer une commande
+
+note: Agent d'accueil
+
+start
+
+:un client veut passer une commande (en boutique ou par téléphone);
+
+:aller sur le site;
+:l'agent se connecte;
+note: la boutique est selectionné dans le profil
+repeat
+:la liste des pizza disponible s'affiche;
+note : en fonction du stock d'ingrédients
+:l'agent selectionne une pizza;
+:l'agent modifie des ingrédients et ecrit un commentaire si besoin;
+repeat while (l'agent ajoute la pizza dans le panier)
+:le confirme la commande;
+note: le stock d'ingrédients est bloqué
+if (le client est au téléphone) then (oui)
+else (non)
+    :faire payer le client;
+    :modifier le status de la commande pour payé;
+endif
+:dire le temps estimatif;
+stop
+
+@enduml

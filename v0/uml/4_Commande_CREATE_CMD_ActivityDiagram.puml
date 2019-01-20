@@ -1,0 +1,47 @@
+@startuml 4_Commande_CREATE_CMD_ActivityDiagram
+
+title Créer une commande
+
+note: client
+
+start
+:aller sur le site;
+if (l'utilisateur a un compte) then (non)
+    if (l'utilisateur veut céer un compte) then (non)
+        :selectionner une boutique;
+        :la liste des pizza disponible s'affiche;
+        note: en fonction du stock d'ingrédients
+        :appeler la boutique pour commander;
+        stop
+        note: créer commande par agent d'accueil
+    else (oui)
+        :renseigner le formulaire d'inscription;
+    endif
+else (oui)
+endif
+:l'utilisateur se connecte;
+note: donner la possibilité de se connecter avec FB
+if (l'utilisateur a renseigné une boutique préférée) then (oui)
+else (non)
+    :l'utilisateur selectionne une boutique;
+    note: demander si c'est la boutique par défaut
+endif
+repeat
+:la liste des pizza disponible s'affiche;
+note : en fonction du stock d'ingrédients
+:l'utilisateur selectionne une pizza;
+:l'utilisateur modifie des ingrédients et écrit un commentaire si besoin;
+repeat while (utilisateur ajoute la pizza dans son panier)
+:l'utilisateur confirme sa commande;
+note: le stock d'ingrédients est bloqué
+if (l'utilisateur veut payer en ligne) then (non)
+    
+else (oui)
+    :l'utilisateur est redirigévers la banque;
+    :il paye;
+    note: le status de la commande est modifié en payé
+endif
+:reception d'un message de confirmation avec le temps estimatif pour venir chercher;
+stop
+
+@enduml

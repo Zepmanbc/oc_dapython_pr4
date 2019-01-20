@@ -9,6 +9,12 @@ actor Pizzaiolo as PZLO
 package Commandes{
     ' left to right direction
     (Gérer les commandes) as CMD
+    (receptionner une commande)
+    (préparer une commande)
+    (livrer une commande)
+    (Suivre l'état d'une commande)
+    (Modifier ou annuler une commande)
+    (Payer une commande)
 }
 
 CUSTOMER <|-- GESTCMD
