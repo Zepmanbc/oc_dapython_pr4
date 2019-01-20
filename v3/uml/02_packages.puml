@@ -1,0 +1,30 @@
+@startuml 02_packages
+title Diagramme de packages
+
+
+actor Gestionnaire_de_commande as GESTCMD
+actor Client as CUSTOMER
+actor Gestionnaire_de_stock as GESTSTOCK
+actor Pizzaiolo as PZLO
+actor Banque <<include>> as BANK
+
+rectangle OC_Pizza{
+    left to right direction
+    package Commande
+    package Produit
+    package Authentification
+}
+
+Authentification -- Commande
+Produit -- Authentification
+Commande - Produit
+
+CUSTOMER -- Commande
+GESTCMD -- Commande
+PZLO -- Produit
+PZLO -- Commande
+GESTSTOCK -- Produit
+Commande -- BANK
+
+
+@enduml

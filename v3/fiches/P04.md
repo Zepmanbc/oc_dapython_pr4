@@ -1,4 +1,4 @@
-# P02 : Lister les recettes (package "Produit")
+# CODE : nom du cas d'utilisation (package "Nom du Package")
 
 |Identification | |
 |-|-|
