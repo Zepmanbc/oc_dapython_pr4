@@ -1,5 +1,5 @@
 @startuml 03_commande
-title Diagramme de package *Commande*
+title Diagramme de cas d'utilisation *Commande*
 
 actor Gestionnaire_de_commande as GESTCMD
 actor Client as CUSTOMER
