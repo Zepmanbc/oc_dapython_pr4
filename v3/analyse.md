@@ -61,28 +61,22 @@ Un 3ème package ressort:
 ## 4 - Fiche Descriptives
 
 ## Package Produit
-* P01 : Suivre l'état du stock
-* P02 : Lister les recettes
-* P03 : Mettre à jour le stock
-* P04 : Lister le stock
-* P05 : Sélectionner une recette
-* P06 : Consulter une recette
+* [P01 : Gérer le stock](fiches/P01.md)
+* [P02 : Consulter une recette](fiches/P02.md)
 
 ## Package Commande
-* C01 : Remplir le Panier
-* C02 : Sélectionner le mode de livraison
-* C03 : Créer une commande
-* C04 : Valider une commande
-* C05 : Modifier une commande
-* C06 : Lister les commandes
-* C07 : Payer une commande
+* [C01 : Livrer une commande](fiches/C01.md)
+* [C02 : Passer une commande](fiches/C02.md)
+* [C03 : Modifier une commande](fiches/C03.md)
+* [C04 : Annuler une commande](fiches/C04.md)
+* [C05 : Suivre l'état d'une commande](fiches/C05.md)
+* [C06 : Payer une commande](fiches/C06.md)
+* [C07 : Préparer une commande](fiches/C07.md)
 
 ## Package Authentification
-* A01 : S'identifier
-* A02 : Créer un compte
-* A03 : Sélectionner un Client
-* A04 : Sélectionner une boutique
-* A05 : Renseigner une adresse de livraison
+* [A01 : S'identifier](fiches/A01.md)
+* [A02 : Créer un compte](fiches/A01.md)
+* [A03 : Choisir une boutique](fiches/A01.md)
 
 ## 5 - Solution technique
 
