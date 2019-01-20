@@ -5,30 +5,12 @@ actor Gestionnaire_de_stock as GESTSTOCK
 actor Pizzaiolo as PZLO
 
 package Produit{
-    ' left to right direction
-    (Consulter une recette) as SHOW_RECIPE
-    (Suivre l'état du stock) as FOLLOW_STOCK
-    (Selectionner une recettes) as SELECT_RECIPE
-    (Lister les recettes) as LIST_RECIPE
-    (Mettre à jour le stock) as UPDATE_STOCK
-    (Lister le stock) as LIST_STOCK
+    (Gérer le stock) as STOCK
+    (Gérer le recettes) as RECIPE
 }
-package Commande
-package Authentification
 
-GESTSTOCK - FOLLOW_STOCK
-GESTSTOCK - UPDATE_STOCK
-SHOW_RECIPE -r- PZLO
-
-' PZLO -- 
-SHOW_RECIPE <-l- SELECT_RECIPE : <<include>>
-LIST_RECIPE --> SELECT_RECIPE : <<include>>
-FOLLOW_STOCK -> LIST_RECIPE : <<extend>>
-FOLLOW_STOCK -- LIST_STOCK
-UPDATE_STOCK - LIST_STOCK
-
-SELECT_RECIPE .. Commande
-LIST_STOCK .. Authentification
-
+STOCK - RECIPE
+GESTSTOCK -u- STOCK
+RECIPE -- PZLO
 
 @enduml
