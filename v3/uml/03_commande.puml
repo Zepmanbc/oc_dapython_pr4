@@ -7,20 +7,30 @@ actor Banque <<include>> as BANK
 actor Pizzaiolo as PZLO
 
 package Commandes{
-    ' left to right direction
-    (Gérer les commandes) as CMD
-    (receptionner une commande)
-    (préparer une commande)
-    (livrer une commande)
-    (Suivre l'état d'une commande)
-    (Modifier ou annuler une commande)
-    (Payer une commande)
+    left to right direction
+    (Passer une commande) as CREATE_CMD
+    (Préparer une commande) as MAKE_CMD
+    (Livrer une commande) as DELIVER_CMD
+    (Modifier une commande) as MODIFY_CMD
+    (Annuler une commande) as CANCEL_CMD
+    (Suivre l'état d'une commande) as FOLLOW_CMD
+    (Payer une commande) as PAY_CMD
 }
 
-CUSTOMER <|-- GESTCMD
-CUSTOMER - CMD
-CMD -- PZLO
-CMD - BANK
+MODIFY_CMD <-- FOLLOW_CMD: <<include>>
+CANCEL_CMD <-- FOLLOW_CMD: <<include>>
 
+CUSTOMER -- CREATE_CMD
+CUSTOMER -- MODIFY_CMD
+CUSTOMER -- CANCEL_CMD
+CUSTOMER -- PAY_CMD
+
+GESTCMD -- DELIVER_CMD
+
+PAY_CMD ..> BANK: <<extend>>
+
+PZLO -- MAKE_CMD
+
+GESTCMD -|> CUSTOMER
 
 @enduml

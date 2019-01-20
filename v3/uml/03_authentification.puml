@@ -2,9 +2,15 @@
 title Diagramme de cas d'utilisation *Authentification*
 
 package Authentification{
-    (Gérer l'Authentification) as LOGIN
+    (S'identifier)
+    (Choisir une boutique)
+    (Creer un compte)
 }
+package Commande
+package Produit
 
+Commande -l- Authentification
+Produit -u- Authentification
 @enduml
 
 

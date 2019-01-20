@@ -5,8 +5,9 @@ actor Gestionnaire_de_stock as GESTSTOCK
 actor Pizzaiolo as PZLO
 
 package Produit{
+
     (Gérer le stock) as STOCK
-    (Gérer le recettes) as RECIPE
+    (Consulter une recette) as RECIPE
 }
 
 STOCK - RECIPE
