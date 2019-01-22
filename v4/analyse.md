@@ -37,7 +37,7 @@ Le *Client* peut payer à la remise de la commande ou en ligne dans le cas d'une
 
 Une commande payée ne peut pas être modifiée ou annulée.
 
-Une commande peut avoir plusieurs status:
+Une commande peut avoir plusieurs statut:
 * validée
 * en préparation
 * prête
@@ -47,7 +47,7 @@ Une commande peut avoir plusieurs status:
 * payée
 * terminée ( = livrée + payée)
 
-Une commande est composée de plusieurs produits, chaque produit aura un status qui déterminera le status de la commande:
+Une commande est composée de plusieurs produits, chaque produit aura un statut qui déterminera le statut de la commande:
 * En attente
 * En préparation
 * prêt
