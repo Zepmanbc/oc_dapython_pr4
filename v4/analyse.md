@@ -15,25 +15,25 @@
 
 ## 1 - Règles fonctionnelles
 
-Le Responsable gère les comptes du personnel (création, modification).
+Le *Responsable* gère les comptes du personnel (création, modification).
 Chaque employé a un profil et est rattaché à une boutique.
 
-Gestionnaire de commande: il est le relais du client pour prendre les commandes par téléphone ou en boutique. Il gère également la gestion des livraisons et le paiement des commandes en boutique.
+*Gestionnaire de commande*: il est le relais du client pour prendre les commandes par téléphone ou en boutique. Il gère également la gestion des livraisons et le paiement des commandes en boutique.
 
-Gestionnaire de stock: il s'occupe de mettre à jour le stock d'ingrédients à la réception et après inventaire. Le sotck est géré indépendemment pour chaque boutique.
+*Gestionnaire de stock*: il s'occupe de mettre à jour le stock d'ingrédients à la réception et après inventaire. Le stock est géré indépendamment pour chaque boutique.
 
-Pizzaiolo: il réalise les commandes suivant l'ordre d'arrivé dans le système et les met à disposition.
+*Pizzaiolo*: il réalise les commandes suivant l'ordre d'arrivé dans le système et les met à disposition.
 
-Le Client peut commander de 3 manières différentes:
+Le *Client* peut commander de 3 manières différentes:
 * en boutique
 * par téléphone
 * en ligne
 
-Le Gestionnaire de commande peut sélectionner un client existant ou en créer un pour créer une commande. Le Client peut être créé/identifié par son numéro de téléphone. Un client fictif identifié au numéro de la boutique permettra d'enregistrer les commandes prise directement au comptoir si le client ne souhaite pas donner de numéro de téléphone.
+Le *Client* peut être livré ou récupérer sa commande en boutique.
 
-Le Client peut être livré ou récupérer sa commande en boutique.
+Le *Gestionnaire de commande* peut sélectionner un client existant ou en créer un pour créer une commande. Le Client peut être créé/identifié par son numéro de téléphone. Un client fictif identifié au numéro de la boutique permettra d'enregistrer les commandes prise directement au comptoir si le client ne souhaite pas donner de numéro de téléphone.
 
-Le Client peut payer à la remise de la commande ou en ligne dans le cas d'une commande en ligne.
+Le *Client* peut payer à la remise de la commande ou en ligne dans le cas d'une commande en ligne.
 
 Une commande payée ne peut pas être modifiée ou annulée.
 
@@ -45,7 +45,7 @@ Une commande peut avoir plusieurs status:
 * livrée
 * annulée
 * payée
-* terminée ( = livrée et payée)
+* terminée ( = livrée + payée)
 
 Une commande est composée de plusieurs produits, chaque produit aura un status qui déterminera le status de la commande:
 * En attente
@@ -62,13 +62,13 @@ Une commande est prête lorsque tous les produits sont prêt (pizzas disponible,
 
 Le système se décomposera en 4 parties:
 
-* Les Commandes: la gestion des commandes et de leurs évolutions en temps réel.
+* Les *Commandes*: la gestion des commandes et de leurs évolutions en temps réel.
 
-* Les Recettes: La liste des pizzas, leur composition et des produits qu'il est possible de commander.
+* Les *Recettes*: La liste des pizzas, leur composition et des produits qu'il est possible de commander.
 
-* Les Ingrédients: La gestion du stock et des ingrédients composant les pizzas.
+* Les *Ingrédients*: La gestion du stock et des ingrédients composant les pizzas.
 
-* L'Autentification: La gestion du personnel, des boutiques et des clients
+* L'*Autentification*: La gestion du personnel, des boutiques et des clients
 
 ![Diagramme de packages](img/02_packages.png)
 
@@ -77,7 +77,7 @@ Le système se décomposera en 4 parties:
 ![Diagramme de cas d'utilisation Recette](img/03_recette.png)
 
 * R01 - Lister les recettes
-* R02 - Consulter les recettes
+* R02 - Consulter les recettes *
 * R03 - Gérer les recettes
 
 ![Diagramme de cas d'utilisation Ingredient](img/03_ingredient.png)
@@ -87,20 +87,21 @@ Le système se décomposera en 4 parties:
 
 ![Diagramme de cas d'utilisation Commande](img/03_commande.png)
 
-* C01 - Préparer une commande
+* C01 - Préparer une commande *
 * C02 - Créer une commande
 * C03 - Suivre l'état d'une commande
-* C04 - Modifier une commande
-* C05 - Payer une commande
-* C06 - Payer une commande en ligne
-* C07 - Livrer une commande
+* C04 - Modifier une commande *
+* C05 - Annuler une commande *
+* C05 - Payer une commande *
+* C06 - Payer une commande en ligne *
+* C07 - Livrer une commande *
 
 ![Diagramme de cas d'utilisation Authentification](img/03_authentification.png)
 
 * A01 - Créer un compte
 * A02 - Gérer le personnel
 * A03 - Gérer les boutiques
-* A04 - S'identifier
+* A04 - S'identifier *
 
 ## Cycle de vie d'une commande
 
