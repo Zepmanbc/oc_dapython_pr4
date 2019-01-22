@@ -71,7 +71,8 @@ Un 3ème package ressort:
 * [C04 : Annuler une commande](fiches/C04.md)
 * [C05 : Suivre l'état d'une commande](fiches/C05.md)
 * [C06 : Payer une commande](fiches/C06.md)
-* [C07 : Préparer une commande](fiches/C07.md)
+* [C07 : Payer une commande en ligne](fiches/C07.md)
+* [C08 : Préparer une commande](fiches/C08.md)
 
 ## Package Authentification
 * [A01 : S'identifier](fiches/A01.md)

@@ -15,6 +15,7 @@ package Commandes{
     (Annuler une commande) as CANCEL_CMD
     (Suivre l'état d'une commande) as FOLLOW_CMD
     (Payer une commande) as PAY_CMD
+    (Payer une commande en ligne) as PAY_ONLINE_CMD
 }
 
 MODIFY_CMD --> FOLLOW_CMD: <<include>>
@@ -24,10 +25,11 @@ CUSTOMER -- CREATE_CMD
 CUSTOMER -- MODIFY_CMD
 CUSTOMER -- CANCEL_CMD
 CUSTOMER -- PAY_CMD
+PAY_CMD <-- PAY_ONLINE_CMD: <<extend>>
 
 GESTCMD -- DELIVER_CMD
 
-PAY_CMD <.. BANK: <<extend>>
+PAY_ONLINE_CMD <.. BANK
 
 PZLO -- MAKE_CMD
 
