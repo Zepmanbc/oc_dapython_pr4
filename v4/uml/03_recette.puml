@@ -1,0 +1,24 @@
+@startuml 03_recette
+title Diagramme de cas d'utilisation *Recette*
+
+' actor Gestionnaire_de_commande as GESTCMD
+' actor Client as CUSTOMER
+' actor Gestionnaire_de_stock as GESTSTOCK
+' actor Pizzaiolo as PZLO
+' actor Responsable as BOSS
+' actor Banque <<system>> as BANK
+
+package Recette{
+    (lister les recettes) as LIST_RECIPES
+    (consulter une recette) as SHOW_RECIPE
+    (Gérer les recettes) as MANAGE_RECIPE
+}
+
+MANAGE_RECIPE -- BOSS
+
+LIST_RECIPES -- CUSTOMER
+SHOW_RECIPE -- CUSTOMER
+GESTCMD -|> CUSTOMER
+SHOW_RECIPE -- PZLO
+
+@enduml

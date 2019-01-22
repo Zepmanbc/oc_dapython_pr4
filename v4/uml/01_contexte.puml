@@ -8,15 +8,17 @@ rectangle OC_Pizza {
     actor Client as CUSTOMER
     actor Gestionnaire_de_stock as GESTSTOCK
     actor Pizzaiolo as PZLO
-    actor Banque as BANK
+    actor Banque <<system>> as BANK
+    actor Responsable as BOSS
+
 
 
 
 GESTSTOCK - OC_Pizza
 PZLO -- OC_Pizza
+BOSS -- OC_Pizza
 OC_Pizza - BANK
 OC_Pizza -- CUSTOMER
 OC_Pizza -- GESTCMD
-CUSTOMER - GESTCMD
 
 @enduml

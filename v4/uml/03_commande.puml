@@ -1,0 +1,35 @@
+@startuml 03_commande
+title Diagramme de cas d'utilisation *Commande*
+
+' actor Gestionnaire_de_commande as GESTCMD
+' actor Client as CUSTOMER
+' actor Gestionnaire_de_stock as GESTSTOCK
+' actor Pizzaiolo as PZLO
+' actor Responsable as BOSS
+' actor Banque <<system>> as BANK
+
+package Commandes{
+    left to right direction
+    (Créer une commande) as CREATE_CMD
+    (Préparer une commande) as MAKE_CMD
+    (Livrer une commande) as DELIVER_CMD
+    (Modifier une commande) as MODIFY_CMD
+    (Suivre l'état d'une commande) as FOLLOW_CMD
+    (Payer une commande) as PAY_CMD
+    (Payer une commande en ligne) as PAY_ONLINE_CMD
+    (Annuler une commande) as CANCEL_CMD
+}
+
+CUSTOMER -- CREATE_CMD
+PZLO -- MAKE_CMD
+GESTCMD -- DELIVER_CMD
+CUSTOMER -- FOLLOW_CMD
+FOLLOW_CMD -- MODIFY_CMD: <<extend>>
+MODIFY_CMD -> CANCEL_CMD: <<extend>>
+CUSTOMER -- PAY_CMD
+PAY_CMD --> PAY_ONLINE_CMD: <<extend>>
+PAY_ONLINE_CMD .. BANK
+GESTCMD --|> CUSTOMER
+
+
+@enduml

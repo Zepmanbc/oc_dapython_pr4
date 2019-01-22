@@ -1,0 +1,23 @@
+@startuml 01_actors
+
+rectangle Acteurs_principaux{
+    actor Gestionnaire_de_commande as GESTCMD
+    actor Client as CUSTOMER
+    actor Gestionnaire_de_stock as GESTSTOCK
+    actor Pizzaiolo as PZLO
+    actor Responsable as BOSS
+}
+rectangle Acteurs_secondaire{
+    actor Banque <<system>> as BANK
+}
+
+' actor Gestionnaire_de_commande as GESTCMD
+' actor Client as CUSTOMER
+' actor Gestionnaire_de_stock as GESTSTOCK
+' actor Pizzaiolo as PZLO
+' actor Responsable as BOSS
+' actor Banque <<system>> as BANK
+@enduml
+ion
+* prête
+* en livraison

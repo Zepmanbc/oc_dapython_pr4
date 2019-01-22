@@ -1,0 +1,50 @@
+@startuml 04_workflow
+title Cycle de vie d'une commande en ligne
+
+
+|Gestionnaire de commande|
+|Pizzaiolo|
+|Système|
+|Client|
+
+start
+|Client|
+:se connecte au système;
+|Système|
+:Authentifie le Client;
+:Affiche la liste des produits 
+disponible dans la boutique prédéfinie;
+|Client|
+:Ajoute des produits dans son panier;
+:Sélectionne livraison à domicile;
+:Sélectionne paiement en ligne;
+|Système|
+:redirige vers le site de la banque;
+|Client|
+:Paie sur le site de la banque;
+|Système|
+:Commande validée;
+:Commande payée;
+|Pizzaiolo|
+:Prend en charge la commande;
+|Système|
+:Commande en prépatation;
+|Pizzaiolo|
+:Réalise les produits de la commande;
+:Met à disposition la commande;
+|Système|
+:Commande prête;
+|Gestionnaire de commande|
+:Regroupe les éléments de la commande;
+:Imprime le bon de livraison et le confie au livreur;
+|Système|
+:Commande en livraison;
+|Gestionnaire de commande|
+:La commande à bien été livrée;
+|Système|
+:Commande terminé;
+
+
+stop
+
+@enduml

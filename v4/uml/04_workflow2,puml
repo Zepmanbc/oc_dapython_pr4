@@ -1,0 +1,50 @@
+@startuml 04_workflow2
+title Cycle de vie d'une commande par téléphone et retrait en boutique
+
+
+|Gestionnaire de commande|
+|Pizzaiolo|
+|Système|
+|Client|
+
+start
+|Client|
+:appelle la boutique;
+|Gestionnaire de commande|
+:Sélectionne un client;
+|Système|
+:Affiche la liste des produits 
+disponible dans la boutique prédéfinie;
+|Gestionnaire de commande|
+:Ajoute des produits dans le panier;
+:Sélectionne retrait en boutique;
+:Sélectionne paiement au retrait;
+|Système|
+:Commande validée;
+|Pizzaiolo|
+:Prend en charge la commande;
+|Système|
+:Commande en prépatation;
+|Pizzaiolo|
+:Réalise les produits de la commande;
+:Met à disposition la commande;
+|Système|
+:Commande prête;
+|Gestionnaire de commande|
+:Regroupe les éléments de la commande;
+:Imprime le bon de livraison;
+|Client|
+:Paie sa commande en boutique;
+|Gestionnaire de commande|
+:Confirme le paiement;
+|Système|
+:Commande payée;
+|Gestionnaire de commande|
+:Donne la commande au client;
+|Système|
+:Commande terminé;
+
+
+stop
+
+@enduml
