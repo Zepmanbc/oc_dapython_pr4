@@ -15,6 +15,7 @@ package Authentification{
     (s'identifier) as LOGIN
     (gérer les boutiques) as STORE
 }
+MANAGE_EMPL -> REGISTER: <<extend>>
 CUSTOMER -- REGISTER
 GESTCMD -|> CUSTOMER
 BOSS -- MANAGE_EMPL

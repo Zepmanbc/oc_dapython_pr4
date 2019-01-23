@@ -77,7 +77,7 @@ Le système se décomposera en 4 parties:
 ![Diagramme de cas d'utilisation Recette](img/03_recette.png)
 
 * R01 - Lister les recettes
-* R02 - Consulter les recettes *
+* R02 - Consulter les recettes
 * R03 - Gérer les recettes
 
 ![Diagramme de cas d'utilisation Ingredient](img/03_ingredient.png)
@@ -87,21 +87,22 @@ Le système se décomposera en 4 parties:
 
 ![Diagramme de cas d'utilisation Commande](img/03_commande.png)
 
-* C01 - Préparer une commande *
+* C01 - Préparer une commande
 * C02 - Créer une commande
 * C03 - Suivre l'état d'une commande
-* C04 - Modifier une commande *
-* C05 - Annuler une commande *
-* C05 - Payer une commande *
-* C06 - Payer une commande en ligne *
-* C07 - Livrer une commande *
+* C04 - Modifier une commande
+* C05 - Annuler une commande
+* C05 - Payer une commande
+* C06 - Payer une commande en ligne
+* C07 - Livrer une commande
+* C08 - Lister les commandes
 
 ![Diagramme de cas d'utilisation Authentification](img/03_authentification.png)
 
 * A01 - Créer un compte
 * A02 - Gérer le personnel
 * A03 - Gérer les boutiques
-* A04 - S'identifier *
+* A04 - S'identifier
 
 ## Cycle de vie d'une commande
 

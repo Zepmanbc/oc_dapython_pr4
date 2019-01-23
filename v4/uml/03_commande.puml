@@ -18,13 +18,16 @@ package Commandes{
     (Payer une commande) as PAY_CMD
     (Payer une commande en ligne) as PAY_ONLINE_CMD
     (Annuler une commande) as CANCEL_CMD
+    (Lister les commandes) AS LIST_CMD
 }
 
 CUSTOMER -- CREATE_CMD
 PZLO -- MAKE_CMD
 GESTCMD -- DELIVER_CMD
+MAKE_CMD <-- LIST_CMD: <<include>>
+DELIVER_CMD <-- LIST_CMD: <<include>>
 CUSTOMER -- FOLLOW_CMD
-FOLLOW_CMD -- MODIFY_CMD: <<extend>>
+FOLLOW_CMD --> MODIFY_CMD: <<extend>>
 MODIFY_CMD -> CANCEL_CMD: <<extend>>
 CUSTOMER -- PAY_CMD
 PAY_CMD --> PAY_ONLINE_CMD: <<extend>>
