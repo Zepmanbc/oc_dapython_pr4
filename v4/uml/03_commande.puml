@@ -1,5 +1,5 @@
 @startuml 03_commande
-title Diagramme de cas d'utilisation *Commande*
+title Diagramme de cas d'utilisation *commande*
 
 ' actor Gestionnaire_de_commande as GESTCMD
 ' actor Client as CUSTOMER
@@ -8,7 +8,7 @@ title Diagramme de cas d'utilisation *Commande*
 ' actor Responsable as BOSS
 ' actor Banque <<system>> as BANK
 
-package Commandes{
+package commande{
     left to right direction
     (Créer une commande) as CREATE_CMD
     (Préparer une commande) as MAKE_CMD

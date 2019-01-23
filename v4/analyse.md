@@ -92,10 +92,10 @@ Le système se décomposera en 4 parties:
 * C03 - Suivre l'état d'une commande
 * C04 - Modifier une commande
 * C05 - Annuler une commande
-* C05 - Payer une commande
-* C06 - Payer une commande en ligne
-* C07 - Livrer une commande
-* C08 - Lister les commandes
+* C06 - Payer une commande
+* C07 - Payer une commande en ligne
+* C08 - Livrer une commande
+* C09 - Lister les commandes
 
 ![Diagramme de cas d'utilisation Authentification](img/03_authentification.png)
 

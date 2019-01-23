@@ -1,5 +1,5 @@
 @startuml 03_ingredient
-title Diagramme de cas d'utilisation *Ingredient*
+title Diagramme de cas d'utilisation *ingredient*
 
 ' actor Gestionnaire_de_commande as GESTCMD
 ' actor Client as CUSTOMER
@@ -8,7 +8,7 @@ actor Gestionnaire_de_stock as GESTSTOCK
 actor Responsable as BOSS
 ' actor Banque <<system>> as BANK
 
-package Ingredient{
+package ingredient{
     (Gérer le stock) as STOCK
     (Gérer les ingrédients) as ITEMS
 }

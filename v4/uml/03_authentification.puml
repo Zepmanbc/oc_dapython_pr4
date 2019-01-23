@@ -1,5 +1,5 @@
 @startuml 03_authentification
-title Diagramme de cas d'utilisation *Authentification*
+title Diagramme de cas d'utilisation *authentification*
 
 actor Gestionnaire_de_commande as GESTCMD
 ' actor Client as CUSTOMER
@@ -8,7 +8,7 @@ actor Gestionnaire_de_commande as GESTCMD
 actor Responsable as BOSS
 ' actor Banque <<system>> as BANK
 
-package Authentification{
+package authentification{
     left to right direction
     (creer un compte) as REGISTER
     (gérer le personnel) as MANAGE_EMPL

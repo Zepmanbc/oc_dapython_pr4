@@ -11,26 +11,26 @@ actor Banque <<system>> as BANK
 
 rectangle OC_Pizza{
     left to right direction
-    package Commande
-    package Recette
-    package Ingredients
-    package Authentification
+    package commande
+    package recette
+    package ingredient
+    package authentification
 }
 
-CUSTOMER -- Commande
-GESTCMD -- Commande
-PZLO -- Commande
-Commande -- BANK
+CUSTOMER -- commande
+GESTCMD -- commande
+PZLO -- commande
+commande -- BANK
 
 GESTCMD -|> CUSTOMER
 
-Recette -- BOSS
-Recette -- PZLO
-Recette -- CUSTOMER
+recette -- BOSS
+recette -- PZLO
+recette -- CUSTOMER
 
-Ingredients -- GESTSTOCK
-Ingredients -- BOSS
+ingredient -- GESTSTOCK
+ingredient -- BOSS
 
-Authentification -l- Tous_les_utilisateurs
+authentification -l- Tous_les_utilisateurs
 
 @enduml
