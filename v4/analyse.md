@@ -76,33 +76,33 @@ Le système se décomposera en 4 parties:
 
 ![Diagramme de cas d'utilisation Recette](img/03_recette.png)
 
-* R01 - Lister les recettes
-* R02 - Consulter les recettes
-* R03 - Gérer les recettes
+* [R01 - Lister les recettes](fiches/R01.md)
+* [R02 - Consulter les recettes](fiches/R02.md)
+* [R03 - Gérer les recettes](fiches/R03.md)
 
 ![Diagramme de cas d'utilisation Ingredient](img/03_ingredient.png)
 
-* I01 - Gérer le stock
-* I02 - Gérer les ingrédients
+* [I01 - Gérer le stock](fiches/I01.md)
+* [I02 - Gérer les ingrédients](fiches/I02.md)
 
 ![Diagramme de cas d'utilisation Commande](img/03_commande.png)
 
-* C01 - Préparer une commande
-* C02 - Créer une commande
-* C03 - Suivre l'état d'une commande
-* C04 - Modifier une commande
-* C05 - Annuler une commande
-* C06 - Payer une commande
-* C07 - Payer une commande en ligne
-* C08 - Livrer une commande
-* C09 - Lister les commandes
+* [C01 - Préparer une commande](fiches/C01.md)
+* [C02 - Créer une commande](fiches/C02.md)
+* [C03 - Suivre l'état d'une commande](fiches/C03.md)
+* [C04 - Modifier une commande](fiches/C04.md)
+* [C05 - Annuler une commande](fiches/C05.md)
+* [C06 - Payer une commande](fiches/C06.md)
+* [C07 - Payer une commande en ligne](fiches/C07.md)
+* [C08 - Livrer une commande](fiches/C08.md)
+* [C09 - Lister les commandes](fiches/C09.md)
 
 ![Diagramme de cas d'utilisation Authentification](img/03_authentification.png)
 
-* A01 - Créer un compte
-* A02 - Gérer le personnel
-* A03 - Gérer les boutiques
-* A04 - S'identifier
+* [A01 - Créer un compte](fiches/A01.md)
+* [A02 - Gérer le personnel](fiches/A02.md)
+* [A03 - Gérer les boutiques](fiches/A03.md)
+* [A04 - S'identifier](fiches/A04.md)
 
 ## Cycle de vie d'une commande
 
@@ -117,6 +117,5 @@ Une solution en ligne qui permet d'avoir une interface commune entre les clients
 * Django : La partie Admin intégrée à Django va permettre d'avoir une gestion des commandes efficace et permet une modularité de l'application afin de prévoir de futures évolutions.
 * Nginx/Gunicorn/Postgres : Une combinaison robuste qui permettra à l'application de supporter la croissance de la société.
 * HTML5/CSS3/JQuery/Bootstrap : Des technologies WEB qui permettent d'avoir une application répondant aux standards graphique actuels et de s'adapter à l'utilisation mobile.
-* Facebook authentification: Permettre au client de se connecter grace à son compte facebook afin de simplifier l'identification et de se laisser la possibilité d'utiliser les réseaux sociaux pour faire de la publicité.
 
 ![Solution Technique](img/05_DeployementDiagram.png)
