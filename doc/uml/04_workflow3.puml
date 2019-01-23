@@ -1,0 +1,32 @@
+@startuml 04_workflow3
+title Créer d'une commande
+start
+:connection;
+if (boutique prédéfinie) then (oui)
+else (non)
+:selectionner une boutique;
+endif
+:affichage des pizzas disponible en fonction du stock;
+repeat
+:ajouter une pizza au panier;
+repeat while (commande complète?)
+
+
+if (Choisir le mode de livraison) then (retrait en boutique)
+    :commande "à retirer";
+else (livraison à domicile)
+    :commande "à livrer";
+endif
+
+
+if (mode de paiement) then (en ligne)
+    :payer en ligne;
+    :commande "payée";
+else (à la recéption)
+    :commande "à régler à la remise";
+endif
+:commande "validée";
+
+
+stop
+@enduml

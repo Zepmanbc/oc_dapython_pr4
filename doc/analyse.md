@@ -110,6 +110,8 @@ Le système se décomposera en 4 parties:
 
 * [Cycle de vie d'une commande en ligne](img/04_workflow.png)
 * [Cycle de vie d'une commande par télephone et retrait en boutique](img/04_workflow2.png)
+* [Diagramme Créer une commande](img/04_workflow3.png)
+* [Diagramme Modifier une commande](img/04_workflow4.png)
 
 ## 5 - Solution technique
 

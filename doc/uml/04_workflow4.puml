@@ -1,0 +1,21 @@
+@startuml 04_workflow4
+title Modifier une commande
+
+start
+
+:affichage de la liste des commandes;
+:selection de la commande;
+if (commande payée ?) then (oui)
+    stop
+endif
+if (commande en préparation ou au dela ?) then (oui)
+    stop
+endif
+:annulation de la commande 
+dans le système;
+:mise à jour du stock;
+:création d'une nouvelle commande 
+avec le panier identique;
+stop
+
+@enduml
