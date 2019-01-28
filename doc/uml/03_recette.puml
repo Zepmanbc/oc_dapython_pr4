@@ -1,11 +1,11 @@
 @startuml 03_recette
 title Diagramme de cas d'utilisation *recette*
 
-' actor Gestionnaire_de_commande as GESTCMD
-' actor Client as CUSTOMER
+actor Gestionnaire_de_commande as GESTCMD
+actor Client as CUSTOMER
 ' actor Gestionnaire_de_stock as GESTSTOCK
-' actor Pizzaiolo as PZLO
-' actor Responsable as BOSS
+actor Pizzaiolo as PZLO
+actor Responsable as BOSS
 ' actor Banque <<system>> as BANK
 
 package recette{
